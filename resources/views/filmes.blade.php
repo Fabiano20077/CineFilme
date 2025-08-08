@@ -1,7 +1,7 @@
-<head>
-    <link rel="stylesheet" href="{{url('assets/css/filme.css')}}">
-</head>
 @extends('templates.template')
+@section('head')
+    <link rel="stylesheet" href="{{url('assets/css/filme.css')}}">
+    
 @section('conteudo')
 
 <h1>pagina apis filmes </h1>
