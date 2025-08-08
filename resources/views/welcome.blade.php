@@ -1,6 +1,8 @@
 @extends('templates.template')
+@section('head')
+
 @section('conteudo')
 
-<h1>home</h1>
+
 
 @endsection

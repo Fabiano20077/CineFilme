@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CineFilme</title>
     <link rel="stylesheet" href="{{url('assets/css/template.css')}}">
+    <link rel="icon" href="{{url('assets/img/logoCinema.png')}}">
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     @yield('head')
 </head>
 <body>
@@ -28,5 +30,10 @@
     <footer>
         todos os direitos reservados
     </footer>
+
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init(); // Inicializa
+  </script>
 </body>
 </html>
