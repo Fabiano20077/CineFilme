@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/sobre', function () {
+    return view('sobre');
+});
+
+Route::get('/filmes', 'App\Http\Controllers\FilmeController@index');

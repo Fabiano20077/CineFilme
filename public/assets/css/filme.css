@@ -1,0 +1,22 @@
+body{
+    background-color: aqua;
+}
+
+.container-card{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    
+}
+
+img{
+    height: 150px;
+}
+
+.card{
+    width: 200px;
+    height: 300px;
+    border: 1px solid black;
+}

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class FilmeController extends Controller
 {
@@ -11,7 +12,22 @@ class FilmeController extends Controller
      */
     public function index()
     {
-        //
+
+        $apikey = env('TMDB_API_KEY');
+
+
+//é necessario configura para produção o ssl
+        $response = Http::withoutVerifying()->get("https://api.themoviedb.org/3/movie/now_playing", [
+            'api_key' => $apikey,
+            'language' => 'pt-BR',
+            'region' => 'BR'
+        ]);
+
+     
+
+        $filmes = $response->json()['results'];
+
+        return view('filmes', compact('filmes'));
     }
 
     /**
