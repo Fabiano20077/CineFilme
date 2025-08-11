@@ -22,7 +22,7 @@
             </div>
 
             <div class="carousel-item">
-                <img src="{{url('/assets/img/carrosel_quarteto.jpeg')}}" class="d-block w-100" alt="...">
+                <img src="{{url('/assets/img/carrosel_jurassic.png')}}" class="d-block w-100" alt="...">
             </div>
             
         </div>
@@ -39,7 +39,10 @@
 </div>
 <div class="filmes">
     <div class="titulo">
-        <h1 class="h12">Escolha seus filmes com mais tranquilidade</h1>
+        <h1 class="h12">CONHEÇA OS FILMES QUE ESTÃO EM CARTAZ NO NOSSO CINEMA</h1>
+    </div>
+    <div class="subtitulo">
+        <p></p>
     </div>
     <div class="cataz">
 
