@@ -6,7 +6,9 @@
 
 @section('conteudo')
 
-
+<div class="welcome">
+    
+</div>
 <div class="containerCarrousel">
 
 
@@ -39,7 +41,7 @@
 </div>
 <div class="filmes">
     <div class="titulo">
-        <h1 class="h12">CONHEÇA OS FILMES QUE ESTÃO EM CARTAZ NO NOSSO CINEMA</h1>
+        <h1 class="h12">CONHEÇA OS FILMES QUE ESTÃO EM CARTAZ NO NOSSO CINEMA!</h1>
     </div>
     <div class="subtitulo">
         <p></p>
