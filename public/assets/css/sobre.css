@@ -20,7 +20,7 @@
 
 .cardao {
     width: 70%;
-    height: 300px;
+    height: 350px;
     display: flex;
      border: 1px solid black;
 }
@@ -57,4 +57,32 @@
 
 .icon {
     cursor: pointer;
+<<<<<<< HEAD
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.textLabel {
+    padding: 5px;
+    font-size: 20px;
+}
+
+.inputs{
+    padding: 5px;
+    font-size: 20px;
+}
+
+
+button{
+    background-color: rgb(66, 66, 250);
+    color: white;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 20px;
+    cursor: pointer;
+=======
+>>>>>>> 9035231f8361a86b9b94b5907868bd0ead67d05e
 }

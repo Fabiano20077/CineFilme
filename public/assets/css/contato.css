@@ -1,0 +1,16 @@
+.containerIf{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.containerContatos{
+    background-color: white;
+    width: 70%;
+    padding: 20px;
+}
+
+.contato{
+    border-bottom: 1px solid black;
+}

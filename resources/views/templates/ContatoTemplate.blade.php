@@ -16,7 +16,7 @@
                 <h1 class="logo-nav">CineFilme</h1>
         </div>
         <ul>
-            <li><a href="">Home</a></li>
+            <li><a href="/adm">Home</a></li>
             <li><a href="/contatos">contatos</a></li>
             <li><a href=""></a></li>
             <li><a href=""></a></li>
