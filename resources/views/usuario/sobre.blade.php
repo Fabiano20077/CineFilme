@@ -63,7 +63,18 @@
 
             </div>
             <div class="content">
+           
+                    <form class="formulario" action="">
+                    <h2>contatos</h2>
 
+                        <label class="textLabel" >Nome:</label>
+                        <input class="inputs" type="text" name="nome">
+                        <label class="textLabel" >Email:</label>
+                        <input class="inputs"  type="text" name="email">
+                        <label class="textLabel" >Telefone:</label>
+                        <input class="inputs"  type="text" name="telefone">
+
+                    </form>
             </div>
         </div>
     </div>

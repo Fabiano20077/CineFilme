@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/contatos', function() {
+        return view('/admin/contatosViu');
+});
+
 Route::get('/', 'App\Http\Controllers\FilmeController@indexHome');
 
 /* Route::get('/', function () {
@@ -20,7 +24,7 @@ Route::get('/', 'App\Http\Controllers\FilmeController@indexHome');
 });
  */
 Route::get('/sobre', function () {
-    return view('sobre');
+    return view('/usuario/sobre');
 });
 
 Route::get('/filmes', 'App\Http\Controllers\FilmeController@index');

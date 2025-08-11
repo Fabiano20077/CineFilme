@@ -27,7 +27,7 @@ class FilmeController extends Controller
 
         $filmes = $response->json()['results'];
 
-        return view('filmes', compact('filmes'));
+        return view('usuario/filmes', compact('filmes'));
     }
 
 
