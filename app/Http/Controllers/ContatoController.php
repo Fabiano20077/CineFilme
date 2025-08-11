@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\ContatoModel;
+use Illuminate\Contracts\View\View;
+
 class ContatoController extends Controller
 {
     /**
@@ -11,7 +14,9 @@ class ContatoController extends Controller
      */
     public function index()
     {
-        //
+        $contatos = ContatoModel::all();
+        return View('/admin/contatosViu', compact('contatos'));
+
     }
 
     /**
@@ -27,7 +32,12 @@ class ContatoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $contatos = new ContatoModel();
+        $contatos->nome = $request->nome;
+        $contatos->email = $request->email;
+        $contatos->telefone = $request->telefone;
+        $contatos->save();
+        return View('/usuario/sobre');
     }
 
     /**

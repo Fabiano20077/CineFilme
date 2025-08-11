@@ -13,11 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/contatos', function() {
-        return view('/admin/contatosViu');
+// adm
+Route::get('/adm', function() {
+    return view('/admin/adm');
 });
 
+Route::get('/contatos', 'App\Http\Controllers\ContatoController@index');
+
+Route::post('/contatos-insert' , 'App\Http\Controllers\ContatoController@store');
+
 Route::get('/', 'App\Http\Controllers\FilmeController@indexHome');
+
+Route::get('/login', function() {
+    return view('login');
+});
 
 /* Route::get('/', function () {
     return view('welcome');
