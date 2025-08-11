@@ -30,6 +30,27 @@ class FilmeController extends Controller
         return view('filmes', compact('filmes'));
     }
 
+
+     public function indexHome()
+    {
+
+        $apikey = env('TMDB_API_KEY');
+
+
+//é necessario configura para produção o ssl
+        $response = Http::withoutVerifying()->get("https://api.themoviedb.org/3/movie/now_playing", [
+            'api_key' => $apikey,
+            'language' => 'pt-BR',
+            'region' => 'BR'
+        ]);
+
+     
+
+        $filmes = $response->json()['results'];
+
+        return view('welcome', compact('filmes'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */

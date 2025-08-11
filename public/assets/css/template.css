@@ -2,14 +2,14 @@ body {
     margin: 0;
     padding: 0;
     text-transform: capitalize;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: #010189;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #eee;
     height: 100vh;
 }
 
 nav {
     display: flex;
-    background-color: #020248;
+    background-color: #D93636;
     border: 1px solid black;
 }
 

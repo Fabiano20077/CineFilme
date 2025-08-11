@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CineFilme</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{url('assets/css/template.css')}}">
     <link rel="icon" href="{{url('assets/img/logoCinema.png')}}">
      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
