@@ -1,0 +1,80 @@
+.containerCarrousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+
+
+}
+
+.carousel {
+    padding: 20px;
+    display: flex;
+
+    width: 60%;
+    height: 300px;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.h12 {
+    padding: 50px;
+
+}
+
+.cataz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.filme-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    display: flex;
+    width: 70%;
+    height: 300px;
+    border-bottom: 1px solid rgba(0, 0, 0, .5);
+}
+
+.card55 {
+    width: 1200px;
+    display: flex;
+}
+
+
+.imagem {}
+
+
+
+.img2 {
+    width: 150px;
+    height: 220px;
+
+    border-radius: 10px;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.if {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 150px;
+    
+    
+}
