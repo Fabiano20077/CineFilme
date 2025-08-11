@@ -31,9 +31,11 @@ nav {
         -1px 1px 0 var(--text--sombra),
         1px 1px 0 var(--text--sombra);
 }
-
-
-
+.nomeNav{
+    width: 50%;
+    height: 100%;
+    object-fit: contain;
+}
 ul {
     width: 60%;
     margin: 0;

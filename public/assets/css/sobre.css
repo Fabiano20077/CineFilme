@@ -31,13 +31,9 @@
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-color: white;
     border: 1px solid black;
     width: 50%;
-    
 }
 
 .card {
@@ -61,19 +57,4 @@
 
 .icon {
     cursor: pointer;
-}
-
-.formulario {
-    display: flex;
-    flex-direction: column;
-}
-
-.textLabel {
-    padding: 5px;
-    font-size: 20px;
-}
-
-.inputs{
-    padding: 5px;
-    font-size: 20px;
 }
