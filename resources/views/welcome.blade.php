@@ -12,11 +12,19 @@
 
     <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
         <div class="carousel-inner">
-            @foreach($filmes as $index => $filme)
-            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                <img src="https://image.tmdb.org/t/p/w300{{ $filme['backdrop_path']}}" class="d-block w-100" alt="...">
+            
+            <div class="carousel-item active">
+                <img src="{{url('/assets/img/carrosel_quarteto.png')}}" class="d-block w-100" alt="...">
             </div>
-            @endforeach
+
+            <div class="carousel-item">
+                <img src="{{url('/assets/img/carrosel_smurfs.png')}}" class="d-block w-100" alt="...">
+            </div>
+
+            <div class="carousel-item">
+                <img src="{{url('/assets/img/carrosel_quarteto.jpeg')}}" class="d-block w-100" alt="...">
+            </div>
+            
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
