@@ -31,13 +31,9 @@
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-color: white;
     border: 1px solid black;
     width: 50%;
-    
 }
 
 .card {
@@ -61,6 +57,7 @@
 
 .icon {
     cursor: pointer;
+<<<<<<< HEAD
 }
 
 .formulario {
@@ -86,4 +83,6 @@ button{
     margin-top: 5px;
     font-size: 20px;
     cursor: pointer;
+=======
+>>>>>>> 9035231f8361a86b9b94b5907868bd0ead67d05e
 }

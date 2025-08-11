@@ -10,9 +10,8 @@
 .carousel {
     padding: 20px;
     display: flex;
-
-    width: 60%;
-    height: 300px;
+    width: 50%;
+    height: 370px;
 }
 
 .titulo {

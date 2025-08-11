@@ -9,7 +9,7 @@ body {
 
 nav {
     display: flex;
-    background-color: #D93636;
+    background-color: #400A14;
     border: 1px solid black;
 }
 
@@ -31,9 +31,11 @@ nav {
         -1px 1px 0 var(--text--sombra),
         1px 1px 0 var(--text--sombra);
 }
-
-
-
+.nomeNav{
+    width: 80%;
+    height: 100%;
+    object-fit: contain;
+}
 ul {
     width: 60%;
     margin: 0;
@@ -47,11 +49,12 @@ ul {
 
 li a {
     text-decoration: none;
-    font-size: 30px;
+    font-size: 17px;
     color: white;
     padding-right: 20px;
     padding-left: 20px;
     border-radius: 5px;
+    text-transform: uppercase;
 }
 
 
@@ -60,8 +63,8 @@ li {
 }
 
 li a:hover {
-    background-color: white;
-    color: #01012e;
+    background-color: rgb(101, 7, 7);
+    color: #ffffff;
 
 }
 
@@ -74,20 +77,20 @@ li a:hover {
 }
 
 .login-text{
-    background-color: rgb(6, 49, 151);
+    background-color: #ffffff;
     text-decoration: none;
     padding-right: var(--text--paddingL);
     padding-left: var(--text--paddingL);
     padding-bottom: var(--text--paddingA);
     padding-top: var(--text--paddingA);
     border-radius: 5px;
-    font-size: 25px;
-    color: white;
+    font-size: 17px;
+    color: rgb(0, 0, 0);
 }
 
 .login-text:hover{
-    background-color: white;
-    color: rgb(6, 49, 151) ;
+    background-color: rgb(105, 8, 8);
+    color: rgb(244, 244, 244) ;
 }
 
 :root {

@@ -13,7 +13,7 @@
 <body>
     <nav>
         <div class="logo">
-                <h1 class="logo-nav">CineFilme</h1>
+                <img src="{{url('assets/img/nomeNav.png')}}" alt="CineFilme" class="nomeNav">
         </div>
         <ul>
             <li><a href="/">home</a></li>
