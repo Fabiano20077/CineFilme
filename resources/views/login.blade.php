@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{url('assets/css/login.css')}}">
 </head>
 <body>
+    
 <nav>
         <div class="logo">
                 <img src="{{url('assets/img/nomeNav.png')}}" alt="CineFilme" class="nomeNav">
@@ -22,12 +23,13 @@
 
 <form class="login" action="" method="get">
     <h1>login</h1>
-        <label for="">nome:</label>
+    
+        <label for="">NOME:</label>
         <input type="text" name="nome">
-        <label for="">senha:</label>
+        <label for="">SENHA:</label>
         <input type="text" name="senha">
-        <p>não tenho conta? <a href="/cadastro">clique aqui!!</a></p>
-        <button> Entrar</button>
+        <p>não tenho conta? <a href="/cadastro" class="link">clique aqui</a></p>
+        <button> ENTRAR</button>
 </form>
     
 </div>

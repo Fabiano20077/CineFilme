@@ -63,8 +63,8 @@ li {
 }
 
 li a:hover {
-    background-color: rgb(101, 7, 7);
-    color: #ffffff;
+    background-color: #f4d8b5;
+    color: #000000;
 
 }
 
@@ -88,8 +88,8 @@ li a:hover {
 }
 
 .login-text:hover{
-    background-color: rgb(105, 8, 8);
-    color: rgb(244, 244, 244) ;
+    background-color: #f4d8b5;
+    color: rgb(0, 0, 0) ;
 }
 
 :root {
