@@ -1,10 +1,9 @@
+
 .containerCarrousel {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
-
-
+    
 }
 
 .carousel {
@@ -43,7 +42,7 @@
     display: flex;
     width: 70%;
     height: 300px;
-    border-bottom: 1px solid rgba(0, 0, 0, .5);
+    border-bottom: 3px solid rgba(0, 0, 0, .5);
 }
 
 .card55 {
