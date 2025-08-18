@@ -1,3 +1,4 @@
+
 .containerCarrousel {
     display: flex;
     align-items: center;
@@ -7,9 +8,8 @@
 .carousel {
     padding: 20px;
     display: flex;
-
-    width: 60%;
-    height: 300px;
+    width: 50%;
+    height: 370px;
 }
 
 .titulo {
@@ -21,7 +21,8 @@
 
 .h12 {
     padding: 50px;
-
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #822121;
 }
 
 .cataz {
@@ -29,7 +30,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
 
@@ -41,18 +41,13 @@
     display: flex;
     width: 70%;
     height: 300px;
-    border-bottom: 1px solid rgba(0, 0, 0, .5);
+    border-bottom: 3px solid rgba(0, 0, 0, .5);
 }
 
 .card55 {
     width: 1200px;
     display: flex;
 }
-
-
-.imagem {}
-
-
 
 .img2 {
     width: 150px;

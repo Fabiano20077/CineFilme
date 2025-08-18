@@ -57,13 +57,30 @@
             </div>
         </div>
     </div>
+
+    
     <div class="if">
         <div class="cardao" data-aos="fade-up">
             <div class="img2">
 
             </div>
             <div class="content">
+           
+                    <form class="formulario" action="/contatos-insert" method="post">
+                    <h2>contatos</h2>
 
+                    @csrf 
+
+                        <label class="textLabel" >Nome:</label>
+                        <input class="inputs" type="text" name="nome">
+                        <label class="textLabel" >Email:</label>
+                        <input class="inputs"  type="text" name="email">
+                        <label class="textLabel" >Telefone:</label>
+                        <input class="inputs"  type="text" name="telefone">
+
+                        <button type="submit"> Enviar</button>
+
+                    </form>
             </div>
         </div>
     </div>

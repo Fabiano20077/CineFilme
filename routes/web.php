@@ -13,14 +13,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// adm
+Route::get('/adm', function() {
+    return view('/admin/adm');
+});
+
+Route::get('/contatos', 'App\Http\Controllers\ContatoController@index');
+
+Route::post('/contatos-insert' , 'App\Http\Controllers\ContatoController@store');
+
 Route::get('/', 'App\Http\Controllers\FilmeController@indexHome');
+
+Route::get('/login', function() {
+    return view('login');
+});
+
+Route::get('/cadastro', function() {
+    return view('cadastro');
+});
 
 /* Route::get('/', function () {
     return view('welcome');
 });
  */
 Route::get('/sobre', function () {
-    return view('sobre');
+    return view('/usuario/sobre');
 });
 
 Route::get('/filmes', 'App\Http\Controllers\FilmeController@index');

@@ -6,17 +6,35 @@
 
 @section('conteudo')
 
-
+<div class="welcome">
+    
+</div>
 <div class="containerCarrousel">
 
 
     <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
         <div class="carousel-inner">
-            @foreach($filmes as $index => $filme)
-            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                <img src="https://image.tmdb.org/t/p/w300{{ $filme['backdrop_path']}}" class="d-block w-100" alt="...">
+            
+            <div class="carousel-item active">
+                <img src="{{url('/assets/img/carrosel_quarteto.png')}}" class="d-block w-100" alt="...">
             </div>
-            @endforeach
+
+            <div class="carousel-item">
+                <img src="{{url('/assets/img/carrosel_smurfs.png')}}" class="d-block w-100" alt="...">
+            </div>
+
+            <div class="carousel-item">
+                <img src="{{url('/assets/img/carrosel_jurassic.png')}}" class="d-block w-100" alt="...">
+            </div>
+
+             <div class="carousel-item">
+                <img src="{{url('/assets/img/carrosel_amores.png')}}" class="d-block w-100" alt="...">
+            </div>
+
+            <div class="carousel-item">
+                <img src="{{url('/assets/img/carrosel_sexta.png')}}" class="d-block w-100" alt="...">
+            </div>
+            
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -31,7 +49,10 @@
 </div>
 <div class="filmes">
     <div class="titulo">
-        <h1 class="h12">Escolha seus filmes com mais tranquilidade</h1>
+        <h1 class="h12">CONHEÇA OS FILMES QUE ESTÃO EM CARTAZ NO NOSSO CINEMA!</h1>
+    </div>
+    <div class="subtitulo">
+        <p></p>
     </div>
     <div class="cataz">
 

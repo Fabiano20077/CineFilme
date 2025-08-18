@@ -8,25 +8,25 @@
     <link rel="stylesheet" href="{{url('assets/css/template.css')}}">
     <link rel="icon" href="{{url('assets/img/logoCinema.png')}}">
      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    @yield('head')
+    @yield('headC')
 </head>
 <body>
     <nav>
         <div class="logo">
-                <img src="{{url('assets/img/nomeNav.png')}}" alt="CineFilme" class="nomeNav">
+                <h1 class="logo-nav">CineFilme</h1>
         </div>
         <ul>
-            <li><a href="/">home</a></li>
-            <li><a href="/filmes">filme</a></li>
-            <li><a href="/sobre">sobre</a></li>
-            <li><a href="#">alguma</a></li>
+            <li><a href="/adm">Home</a></li>
+            <li><a href="/contatos">contatos</a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
         </ul>
         <div class="login">
-                <a class="login-text" href="/login">login</a>
+                <a class="login-text" href="#">login</a>
         </div>
     </nav>
 
-    @yield('conteudo')
+    @yield('conteudoC')
 
     <footer>
         todos os direitos reservados
