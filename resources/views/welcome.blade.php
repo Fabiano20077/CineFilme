@@ -26,6 +26,14 @@
             <div class="carousel-item">
                 <img src="{{url('/assets/img/carrosel_jurassic.png')}}" class="d-block w-100" alt="...">
             </div>
+
+             <div class="carousel-item">
+                <img src="{{url('/assets/img/carrosel_amores.png')}}" class="d-block w-100" alt="...">
+            </div>
+
+            <div class="carousel-item">
+                <img src="{{url('/assets/img/carrosel_sexta.png')}}" class="d-block w-100" alt="...">
+            </div>
             
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">

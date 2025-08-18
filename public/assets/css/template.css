@@ -71,7 +71,6 @@ li a:hover {
 .login {
     display: flex;
     width: 20%;
-    
     align-items: center;
     justify-content: center;
 }

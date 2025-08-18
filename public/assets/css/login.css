@@ -1,10 +1,71 @@
-body{
-    display: flex;
-    background-color: white;
+body {
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #eee;
     height: 100vh;
+}
+
+nav {
+    display: flex;
+    background-color: #400A14;
+    border: 1px solid black;
+}
+
+.logo {
+    display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 20%;
+   
+}
+
+.logo-nav {
+    color: brown;
+    margin: 0;
+    font-size: 40px;
+    text-shadow:
+        -1px -1px 0 var(--text--sombra),
+        1px -1px 0 var(--text--sombra),
+        -1px 1px 0 var(--text--sombra),
+        1px 1px 0 var(--text--sombra);
+}
+.nomeNav{
+    width: 80%;
+    height: 100%;
+    object-fit: contain;
+}
+ul {
+    width: 60%;
+    margin: 0;
+    display: flex;
+    list-style: none;
+   
+    justify-content: space-evenly;
+}
+
+
+
+li a {
+    text-decoration: none;
+    font-size: 17px;
+    color: white;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+
+li {
+    padding: 15px;
+}
+
+li a:hover {
+    background-color: rgb(101, 7, 7);
+    color: #ffffff;
+
 }
 
 
@@ -42,4 +103,5 @@ button,.botao{
 .botao{
     margin-top: 10px;
 }
+
 
