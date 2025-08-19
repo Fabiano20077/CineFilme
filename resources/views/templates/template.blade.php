@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{url('assets/css/template.css')}}">
     <link rel="icon" href="{{url('assets/img/logoCinema.png')}}">
-     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     @yield('head')
 </head>
+
 <body>
     <nav>
         <div class="logo">
-                <img src="{{url('assets/img/nomeNav.png')}}" alt="CineFilme" class="nomeNav">
+            <img src="{{url('assets/img/nomeNav.png')}}" alt="CineFilme" class="nomeNav">
         </div>
         <ul>
             <li><a href="/">home</a></li>
@@ -22,7 +24,11 @@
             <li><a href="#">alguma</a></li>
         </ul>
         <div class="login">
-                <a class="login-text" href="/login">login</a>
+            @if(!Auth::check()):
+            <a class="login-text" href="/login">login</a>
+            @else :
+            <a href="/sair">sair</a>
+            @endif
         </div>
     </nav>
 
@@ -32,9 +38,10 @@
         todos os direitos reservados
     </footer>
 
-      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init(); // Inicializa
-  </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init(); // Inicializa
+    </script>
 </body>
+
 </html>

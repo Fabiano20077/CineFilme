@@ -20,6 +20,15 @@ Route::get('/adm', function() {
 
 Route::get('/contatos', 'App\Http\Controllers\ContatoController@index');
 
+
+//usuario 
+
+Route::post('/cadastro', 'App\Http\Controllers\UsuarioController@store');
+
+Route::get('/fazerLogin', 'App\Http\Controllers\UsuarioController@fazerLogin');
+
+Route::get('/sair', 'App\Http\Controllers\UsuarioController@fazerLogout');
+
 Route::post('/contatos-insert' , 'App\Http\Controllers\ContatoController@store');
 
 Route::get('/', 'App\Http\Controllers\FilmeController@indexHome');

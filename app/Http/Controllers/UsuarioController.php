@@ -3,51 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
+use App\Models\User;
+use Illuminate\Auth\AuthenticationException;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
-class FilmeController extends Controller
+class UsuarioController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-
-        $apikey = env('TMDB_API_KEY');
-
-        //é necessario configura para produção o ssl
-        $response = Http::withoutVerifying()->get("https://api.themoviedb.org/3/movie/now_playing", [
-            'api_key' => $apikey,
-            'language' => 'pt-BR',
-            'region' => 'BR'
-        ]);
-
-
-
-        $filmes = $response->json()['results'];
-
-        return view('usuario/filmes', compact('filmes'));
+        //
     }
 
 
-    public function indexHome()
+    public function fazerLogin(Request $request)
     {
 
-        $apikey = env('TMDB_API_KEY');
+        if (!Auth::attempt($request->only(['name', 'password']))) {
+            return redirect('/login');
+        } else {
+            return redirect()->action('App\Http\Controllers\FilmeController@indexHome');
+        }
+    }
 
 
-        //é necessario configura para produção o ssl
-        $response = Http::withoutVerifying()->get("https://api.themoviedb.org/3/movie/now_playing", [
-            'api_key' => $apikey,
-            'language' => 'pt-BR',
-            'region' => 'BR'
-        ]);
+    public function fazerLogout()
+    {
 
-
-
-        $filmes = $response->json()['results'];
-
-        return view('welcome', compact('filmes'));
+        Auth::logout();
+        return redirect('/login');
     }
 
     /**
@@ -63,7 +50,17 @@ class FilmeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User();
+        $user->name = $request->nome;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->senha);
+        $user->created_at = date('Y-m-d');
+        $user->updated_at = date('Y-m-d');
+        $user->save();
+
+        // Auth::login($user);
+
+        return view('login');
     }
 
     /**
