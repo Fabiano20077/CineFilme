@@ -9,14 +9,13 @@
     padding: 20px;
     display: flex;
     width: 50%;
-    height: 370px;
+    height: 560px;
 }
 
 .titulo {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .h12 {

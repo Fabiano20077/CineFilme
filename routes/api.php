@@ -18,4 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/api', 'App\Http\Controllers\FilmeController@index' );
+Route::get('/apii', 'App\Http\Controllers\FilmeController@addFilneApi' );
+
 

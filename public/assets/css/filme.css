@@ -20,4 +20,7 @@ img{
     height: 350px;
     border: 1px solid black;
     background-color: white;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
