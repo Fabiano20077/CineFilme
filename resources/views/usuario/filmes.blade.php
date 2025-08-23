@@ -15,15 +15,15 @@
 
     <div class="card">
 
-        <img src="https://image.tmdb.org/t/p/w300{{ $filme['poster']}}" alt="{{$filme['titulo']}}">
+        <img src="{{ asset('storage/'.$filme->poster)}}" alt="{{$filme['titulo']}}">
 
-        <h4>{{ $filme['titulo'] }}</h2>
+        <h4>{{ $filme->titulo }}</h2>
 
         <p>
-            <label for="">lançamento:</label> {{ $filme['lancamento'] }}
+            <label for="">lançamento:</label> {{ $filme->lancamento }}
         </p>
 
-        <button value="{{$filme['id']}}"> ver </button>
+        <button value="{{$filme->id}}"> ver </button>
 
     </div>
 

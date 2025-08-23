@@ -5,10 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UsuarioModel extends Model
+class generoModel extends Model
 {
     use HasFactory;
 
+    protected $table = 'genero';
 
-    
+    protected $fillable = ['nomeGenero'];
+
+    protected $primaryKey = 'idGenero';
 }

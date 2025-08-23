@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\Models\filmeModel;
 use Illuminate\Support\Facades\Storage;
+use App\Models\generoModel;
 use League\CommonMark\Extension\CommonMark\Node\Inline\Strong;
 
 class FilmeController extends Controller
@@ -16,7 +17,7 @@ class FilmeController extends Controller
     public function index()
     {
 
-        $apikey = env('TMDB_API_KEY');
+        /*   $apikey = env('TMDB_API_KEY');
 
         //é necessario configura para produção o ssl
         $response = Http::withoutVerifying()->get("https://api.themoviedb.org/3/movie/now_playing", [
@@ -37,9 +38,11 @@ class FilmeController extends Controller
                 'poster' => $filme['poster_path'],
                 'sinopser' => $filme['overview']
             ];
-        });
+        }); */
 
-       // return $filmes;
+        $filmes = filmeModel::all();
+
+        // return $filmes;
 
         return view('usuario/filmes', compact('filmes'));
     }
@@ -48,7 +51,7 @@ class FilmeController extends Controller
     public function indexHome()
     {
 
-        $apikey = env('TMDB_API_KEY');
+        /*   $apikey = env('TMDB_API_KEY');
 
 
         //é necessario configura para produção o ssl
@@ -58,9 +61,11 @@ class FilmeController extends Controller
             'region' => 'BR'
         ]);
 
+         $filmes = $response->json()['results']; */
 
+        $filmes = filmeModel::all();
 
-        $filmes = $response->json()['results'];
+        // return $filmes;
 
         return view('welcome', compact('filmes'));
     }
@@ -76,12 +81,9 @@ class FilmeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        
-    }
+    public function store(Request $request) {}
 
-    public function addFilneApi() 
+    public function addFilneApi()
     {
         $apikey = env('TMDB_API_KEY');
 
@@ -97,16 +99,16 @@ class FilmeController extends Controller
         $filmes = $response->json()['results'];
 
 
-        foreach($filmes as $filme) {
+        foreach ($filmes as $filme) {
 
-            if(!empty($filme['poster_path'])){
+            if (!empty($filme['poster_path'])) {
 
-                $urlImagem = 'https://image.tmdb.org/t/p/w300'.$filme['poster_path'];
-                $conteudoImagem = http::get($urlImagem)->body();
+                $urlImagem = 'https://image.tmdb.org/t/p/w300' . $filme['poster_path'];
+                $conteudoImagem = http::withoutVerifying()->get($urlImagem)->body();
 
                 $nomeArquivo = basename($filme['poster_path']);
 
-                $caminhoSalva = 'uploads/'.$nomeArquivo;
+                $caminhoSalva = 'uploads/' . $nomeArquivo;
 
                 Storage::disk('public')->put($caminhoSalva, $conteudoImagem);
             } else {
@@ -125,8 +127,6 @@ class FilmeController extends Controller
                     'sinopse' => $filme['overview']
                 ]
             );
-
-            
         }
 
         return 'salvo';

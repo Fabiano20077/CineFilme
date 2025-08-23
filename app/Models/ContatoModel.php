@@ -11,7 +11,6 @@ class ContatoModel extends Model
 
     protected $table = 'tbcontatos';
 
-    public $timestamps = false;
     protected $fillable = ['nome','email','telefone'];
 
     protected $primaryKey = 'id';

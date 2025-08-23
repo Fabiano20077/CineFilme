@@ -1,4 +1,4 @@
-@extends('templates.ContatoTemplate')
+@extends('templates.admTemplate')
 @section('headC')
 
 <link rel="stylesheet" href="{{url('assets/css/contato.css')}}">

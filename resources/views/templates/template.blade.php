@@ -27,7 +27,9 @@
             @if(!Auth::check()):
             <a class="login-text" href="/login">login</a>
             @else :
-            <a href="/sair">sair</a>
+            <div class="perfil">
+                <a href="/perfil/{{ Auth::user()->id }}">ver perfil</a>
+            </div>
             @endif
         </div>
     </nav>

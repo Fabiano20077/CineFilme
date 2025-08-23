@@ -17,13 +17,10 @@
         </div>
         <ul>
             <li><a href="/adm">Home</a></li>
+            <li><a href="/addfilme">addfilme</a></li>
             <li><a href="/contatos">contatos</a></li>
             <li><a href=""></a></li>
-            <li><a href=""></a></li>
         </ul>
-        <div class="login">
-                <a class="login-text" href="#">login</a>
-        </div>
     </nav>
 
     @yield('conteudoC')

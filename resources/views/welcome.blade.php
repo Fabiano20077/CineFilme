@@ -62,17 +62,17 @@
             <div class="card55">
 
                 <div class="imagem">
-                    <img class="img2" src="https://image.tmdb.org/t/p/w300{{ $filme['poster_path']}}">
+                    <img class="img2" src="{{asset('storage/'.$filme->poster) }}">
                 </div>
                 <div class="conteudo">
                     <div>
-                        <h2>{{$filme['title']}}</h2>
+                        <h2>{{$filme->titulo}}</h2>
                     </div>
                     <div class="if">
 
-                        <label for="">nota: {{$filme['vote_average']}} </label>
-                        <label for="">classificação: {{$filme['adult']}}</label>
-                        <label for="">data de lançamento: {{$filme['release_date']}}</label>
+                        <label for="">genero: {{$filme->genero}} </label>
+                        <label for="">classificação: {{$filme->sinopse}}</label>
+                        <label for="">data de lançamento: {{$filme->lancamento}}</label>
                     </div>
                 </div>
 

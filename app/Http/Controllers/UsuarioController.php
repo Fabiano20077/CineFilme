@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\filmeModel;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Auth\AuthenticationException;
@@ -68,7 +69,8 @@ class UsuarioController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $user = User::find($id);
+        return view('usuario/perfil', compact('user'));
     }
 
     /**
@@ -76,7 +78,8 @@ class UsuarioController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $user = User::find($id);
+        return view('usuario/perfilUpdate', compact('user'));
     }
 
     /**
@@ -84,7 +87,10 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $user = User::find($id);
+        $user->update(['name' => $request->nome]);
+        $user->update(['email' => $request->email]);
+        return redirect()->action('App\Http\Controllers\FilmeController@indexHome');
     }
 
     /**
@@ -92,6 +98,8 @@ class UsuarioController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+      /*   $user = User::find($id)->delete(); */
+        Auth::logout();
+        return redirect()->action('App\Http\Controllers\FilmeController@indexHome');
     }
 }
