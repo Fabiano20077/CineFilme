@@ -81,7 +81,19 @@ class FilmeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request) {}
+    public function store(Request $request)
+    {
+        $filme = new filmeModel();
+        $filme->titulo = $request->titulo;
+        $filme->genero = $request->genero;
+        $filme->lancamento = $request->lanca;
+        $filme->classificacao = $request->classificacao;
+        $filme->sinopse = $request->sinopse;
+        $filme->created_at = date('Y-m-d');
+        $filme->updated_at = date('Y-m-d');
+        $filme->save();
+        return view('/admin.adm');
+    }
 
     public function addFilneApi()
     {
@@ -94,9 +106,26 @@ class FilmeController extends Controller
             'region' => 'BR'
         ]);
 
+        $responseGenero = Http::withoutVerifying()->get("https://api.themoviedb.org/3/genre/movie/list", [
+            'api_key' => $apikey,
+            'language' => 'pt-BR'
+        ]);
+
+
 
 
         $filmes = $response->json()['results'];
+
+
+        $generos = $responseGenero->json()['genres'];
+
+        foreach ($generos as $genero) {
+
+            generoModel::updateOrCreate(
+                ['idGenero' => $genero['id']],
+                ['nomeGenero' => $genero['name']]
+            );
+        }
 
 
         foreach ($filmes as $filme) {
@@ -120,7 +149,7 @@ class FilmeController extends Controller
                 ['idFilme' => $filme['id']],
                 [
                     'titulo' => $filme['title'],
-                    'genero' => json_encode($filme['genre_ids']),
+                    'genero' => $genero['name'],
                     'lancamento' => $filme['release_date'],
                     'classificacao' => $filme['adult'],
                     'poster' => $caminhoSalva,
@@ -128,6 +157,7 @@ class FilmeController extends Controller
                 ]
             );
         }
+
 
         return 'salvo';
     }

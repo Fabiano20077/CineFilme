@@ -18,9 +18,9 @@ Route::get('/adm', function () {
     return view('/admin.adm');
 });
 
-Route::get('/addfilme', function() {
-    return view('/admin.adicionarFilme');
-});
+Route::get('/addfilme', 'App\Http\Controllers\generoController@index');
+
+Route::post('/addFilmes', 'App\Http\Controllers\FilmeController@store');
 
 Route::get('/contatos', 'App\Http\Controllers\ContatoController@index');
 

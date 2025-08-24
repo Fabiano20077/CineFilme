@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('genero');
             $table->date('lancamento');
             $table->boolean('classificacao');
-            $table->string('poster');
+            $table->string('poster')->nullable();
             $table->text('sinopse');
             $table->timestamps();
         });
