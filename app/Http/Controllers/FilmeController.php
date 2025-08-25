@@ -162,6 +162,13 @@ class FilmeController extends Controller
         return 'salvo';
     }
 
+
+    public function filmeIngressos(string $id)
+    {
+        $filmes = filmeModel::find($id);
+        return view('/usuario.ingressos', compact('filmes'));
+    }
+
     /**
      * Display the specified resource.
      */

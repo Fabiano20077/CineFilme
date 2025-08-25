@@ -31,7 +31,12 @@
 
 
 @foreach($filme as $fil)
-<h1>{{$fil->titulo}}</h1>
+<div class="card">
+    <h1>{{$fil->titulo}}</h1>
+    
+    <a href="/">edita</a>
+    <a href="/">deleta</a>
+</div>
 @endforeach
 
 @endsection

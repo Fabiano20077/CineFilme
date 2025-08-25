@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sala', function (Blueprint $table) {
-            $table->id('idSala');
-            $table->integer('qtaCadeiras')->nullable();
-            $table->date('dataSala');
-            $table->time('horarioSala');
+        Schema::create('sala_pivo', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('idSala')->references('idSala')->on('sala');
             $table->foreignId('idFilme')->references('idFilme')->on('filme');
             $table->timestamps();
         });
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sala');
+        Schema::dropIfExists('sala_pivo');
     }
 };
