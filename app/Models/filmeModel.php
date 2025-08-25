@@ -22,7 +22,7 @@ class filmeModel extends Model
         'sinopse'
     ];
 
-    public $primaryKey = 'id';
+    public $primaryKey = 'idFilme';
 
 
 }

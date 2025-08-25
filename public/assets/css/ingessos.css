@@ -1,0 +1,60 @@
+.container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    margin: 20px;
+    width: 70%;
+    border: 1px solid black;
+    display: flex;
+    padding: 10px;
+    background-color: white;
+}
+
+
+.if{
+    flex: 1;
+ 
+}
+
+
+.sessoes{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+select{
+    padding: 10px;
+    font-size: 20px;
+    border-top-left-radius:5px;
+    border-top-right-radius: 5px;
+    background-color: rgba(137, 43, 226, 0.683);
+    color: white;
+    text-transform: capitalize;
+}
+
+.imagem{
+    padding: 10px;
+}
+
+.botos{
+    position: relative;
+    height: 350px;
+    border: 1px solid black;
+}
+
+button{
+    padding: 10px;
+    font-size: 20px;
+    background-color: rgba(61, 61, 249, 0.71);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+}

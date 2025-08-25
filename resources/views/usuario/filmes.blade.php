@@ -23,11 +23,9 @@
             <label for="">lançamento:</label> {{ $filme->lancamento }}
         </p>
 
-        <button value="{{$filme->id}}"> ver </button>
-
+        <a href="/ingressos/{{$filme->idFilme}}"> ingressos</a>
+        
     </div>
-
-
     @endforeach
 </div>
 
