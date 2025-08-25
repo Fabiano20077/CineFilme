@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // adm
-Route::get('/adm', function () {
-    return view('/admin.adm');
-});
+Route::get('/adm','App\Http\Controllers\admFilmeController@index');
 
 Route::get('/addfilme', 'App\Http\Controllers\generoController@index');
 
