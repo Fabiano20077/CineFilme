@@ -62,7 +62,7 @@
     <div class="if">
         <div class="cardao" data-aos="fade-up">
             <div class="img2">
-
+            <img src="{{url('assets/img/contato_img.jpg')}}" alt="cad" class="cadImg">
             </div>
             <div class="content">
            

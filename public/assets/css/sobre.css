@@ -1,6 +1,6 @@
 .container {
     padding: 20px;
-    border: 1px solid black;
+    
 }
 
 .cads {
@@ -22,23 +22,23 @@
     width: 70%;
     height: 350px;
     display: flex;
-     border: 1px solid black;
+    
 }
 
 .img2 {
     width: 50%;
-    border: 1px solid black;
+    
 }
 
 .content {
     background-color: white;
-    border: 1px solid black;
+    
     width: 50%;
 }
 
 .card {
     width: 200px;
-    border: 1px solid black;
+    border-radius: 17px;
     padding: 10px;
     border-radius: 10px;
     background-color: white;
@@ -62,35 +62,52 @@
 
 .formulario {
     display: flex;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 2px;
     flex-direction: column;
     justify-items: center;
     align-items: center;
     font-size: 17px;
     font-weight: bold;
+    gap: 5px;
+}
+.cadImg{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 20px;
+    
+    
 }
 h2{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #3d0808;
 }
 .textLabel {
     padding: 5px;
     font-size: 17px;
+    color:#1d0505;
 }
 
 .inputs{
     padding: 5px;
     width: 50%;
     font-size: 17px;
-    border-radius: 15px;
+    border-radius: 10px;
+    border-width: 0;
+    box-shadow: 0px 4px 5px rgba(109, 3, 3, 0.644);
 }
 
 
 button{
     border-radius: 17px;
     color: rgb(250, 250, 250);
-    background-color:rgb(94, 11, 8);
+    background-color: #bd0404;
+    box-shadow: 0px 4px 20px rgb(65, 3, 3);
     padding: 10px;
     margin-top: 5px;
     font-size: 17px;
     cursor: pointer;
     border: 0;
+    margin-left: 70%;
+    
 }
