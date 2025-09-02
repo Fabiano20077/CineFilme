@@ -9,8 +9,7 @@ body {
 
 nav {
     display: flex;
-    background-color: #400A14;
-    border: 1px solid black;
+    background-color: #470202;
 }
 
 .logo {
@@ -63,8 +62,7 @@ li {
 }
 
 li a:hover {
-    background-color: #f4d8b5;
-    color: #000000;
+    color: #991616;
 
 }
 
@@ -76,7 +74,7 @@ li a:hover {
 }
 
 .login-text{
-    background-color: #ffffff;
+
     text-decoration: none;
     padding-right: var(--text--paddingL);
     padding-left: var(--text--paddingL);
@@ -84,12 +82,11 @@ li a:hover {
     padding-top: var(--text--paddingA);
     border-radius: 5px;
     font-size: 17px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 .login-text:hover{
-    background-color: #f4d8b5;
-    color: rgb(0, 0, 0) ;
+    color: #991616;
 }
 
 :root {
