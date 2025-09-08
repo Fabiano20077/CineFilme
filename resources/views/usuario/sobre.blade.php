@@ -2,6 +2,7 @@
 @section('head')
 
 <link rel="stylesheet" href="{{url('assets/css/sobre.css')}}">
+<link rel="icon" href="{{url('assets/img/logoCinema.png')}}">
 
 @section('conteudo')
 
