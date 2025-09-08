@@ -6,8 +6,11 @@
 @section('conteudo')
 
 <div class="container">
-    <div class="cads">
-
+    <div class="dev">
+        <strong>DESENVOLVEDORES</strong>    
+    </div>    
+<div class="cads">
+        
 
         <div class="card">
             <div class="imgs">
@@ -67,7 +70,7 @@
             <div class="content">
            
                     <form class="formulario" action="/contatos-insert" method="post">
-                    <h2>contatos</h2>
+                    <h1>contatos</h1>
 
                     @csrf 
 

@@ -18,7 +18,7 @@
             <li><a href="/">home</a></li>
             <li><a href="/filmes">filme</a></li>
             <li><a href="/sobre">sobre</a></li>
-            <li><a href="#">alguma</a></li>
+            
         </ul>
     </nav>
     <div class="containerLogin">
