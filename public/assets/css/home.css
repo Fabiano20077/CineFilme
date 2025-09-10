@@ -13,7 +13,9 @@ body{
     width: 50%;
     height: 560px;
 }
-
+h2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 .titulo {
     display: flex;
     align-items: center;
@@ -21,7 +23,8 @@ body{
 }
 
 .h12 {
-    padding: 50px;
+    position: absolute;
+    top: 80%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: #822121;
 }
@@ -68,6 +71,7 @@ body{
     flex-direction: column;
     justify-content: center;
     height: 150px;
-    
-    
+}
+label{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
