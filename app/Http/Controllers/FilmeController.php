@@ -8,6 +8,7 @@ use App\Models\filmeModel;
 use Illuminate\Support\Facades\Storage;
 use App\Models\generoModel;
 use App\Models\salaModel;
+use Illuminate\Contracts\View\View;
 use League\CommonMark\Extension\CommonMark\Node\Inline\Strong;
 
 class FilmeController extends Controller
@@ -168,9 +169,25 @@ class FilmeController extends Controller
     {
         $filmes = filmeModel::find($id);
 
-        $sala = salaModel::where('idFilme',$id)->get();
+        $sala = salaModel::where('idFilme', $id)->get();
 
-        return view('/usuario.ingressos', compact('filmes','sala'));
+        return view('/usuario.ingressos', compact('filmes', 'sala'));
+    }
+
+    public function addCadeira(string $id)
+    {
+
+        $sala = salaModel::find($id);
+
+        if ($sala) {
+            if (is_null($sala->qtaCadeiras)) {
+                $sala->qtaCadeiras = 0;
+                $sala->save();
+            }
+            $sala->increment('qtaCadeiras');
+        }
+
+        return redirect('/');
     }
 
 

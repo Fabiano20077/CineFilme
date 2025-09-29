@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('ingresso', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('idFilme')->references('idFilme')->on('filme');
+            $table->foreignId('idUsers')->references('idUsers')->on('users');
             $table->foreignId('idSala')->references('idSala')->on('sala');
             $table->timestamps();
         });

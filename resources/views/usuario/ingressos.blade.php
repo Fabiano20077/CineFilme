@@ -27,13 +27,13 @@
 
                 </div>
                 <div class="botos">
-                    <form action="">
-                        @foreach($sala as $sal)
-                        <button type="button" class="card2 horario-item" data-dia='{{$sal->dataSala}}' style="display:none;">
-                            <label for="">{{$sal->horarioSala}}</label>
-                        </button>
-                        @endforeach
-                    </form>
+                    @foreach($sala as $sal)
+
+                    <a href="/comprar-ingresso/{{$sal->idSala}}" class="card2 horario-item" data-dia='{{$sal->dataSala}}' style=" display:none;">
+                        <label name='horario' for="">{{$sal->horarioSala}}</label>
+                    </a>
+
+                    @endforeach
                 </div>
             </form>
         </div>

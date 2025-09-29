@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FilmeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,3 +62,6 @@ Route::get('/perfil-edit/{id}', 'App\Http\Controllers\UsuarioController@edit');
 Route::post('/perfil-update/{id}', 'App\Http\Controllers\UsuarioController@update');
 
 Route::get('/ingressos/{id}', 'App\Http\Controllers\FilmeController@filmeIngressos');
+
+Route::get('/comprar-ingresso/{id}', [FilmeController::class, 'addCadeira']);
+
