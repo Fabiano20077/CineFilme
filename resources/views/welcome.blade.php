@@ -56,7 +56,12 @@
     </div>
     <div class="cataz">
 
-        @foreach($filmes as $filme)
+    
+
+        @foreach($filmes->take(5) as $filme)
+
+
+       
 
         <div class="filme-card">
             <div class="card55">

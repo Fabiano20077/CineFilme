@@ -23,7 +23,7 @@ class UsuarioController extends Controller
     public function fazerLogin(Request $request)
     {
 
-        if (!Auth::attempt($request->only(['name', 'password']))) {
+        if (!Auth::attempt($request->only(['email', 'password']))) {
             return redirect('/login');
         } else {
             return redirect()->action('App\Http\Controllers\FilmeController@indexHome');

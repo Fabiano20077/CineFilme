@@ -28,8 +28,8 @@
             @csrf
             <h1>login</h1>
 
-            <label for="">NOME:</label>
-            <input type="text" name="name">
+            <label for="">EMAIL:</label>
+            <input type="text" name="email">
             <label for="">SENHA:</label>
             <input type="password" name="password">
             <p>não tenho conta? <a href="/cadastro" class="link">clique aqui</a></p>

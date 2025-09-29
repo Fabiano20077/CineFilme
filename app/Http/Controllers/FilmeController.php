@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Http;
 use App\Models\filmeModel;
 use Illuminate\Support\Facades\Storage;
 use App\Models\generoModel;
+use App\Models\salaModel;
 use League\CommonMark\Extension\CommonMark\Node\Inline\Strong;
 
 class FilmeController extends Controller
@@ -166,8 +167,13 @@ class FilmeController extends Controller
     public function filmeIngressos(string $id)
     {
         $filmes = filmeModel::find($id);
-        return view('/usuario.ingressos', compact('filmes'));
+
+        $sala = salaModel::where('idFilme',$id)->get();
+
+        return view('/usuario.ingressos', compact('filmes','sala'));
     }
+
+
 
     /**
      * Display the specified resource.

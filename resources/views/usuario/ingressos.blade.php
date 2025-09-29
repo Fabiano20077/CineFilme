@@ -2,6 +2,7 @@
 @section('head')
 
 <link rel="stylesheet" href="{{url('assets/css/ingessos.css')}}">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 @endsection
 @section('conteudo')
@@ -13,26 +14,49 @@
             <img src="{{ asset('storage/'.$filmes->poster)}}">
         </div>
         <div class="if">
-            <form class="fromSessoses" action="" method="">
             <h1>sessoes:</h1>
+            <form class="fromSessoses" action="" method="">
                 <div class="sessoes">
-                    
-                    <select name="" id="">
-                    <option value="">dias:</option>
-                    <option value=""></option>
-                  </select>
-                  <select name="" id="">
-                    <option value="">horarios:</option>
-                    <option value=""></option>
-                  </select>
+
+                    <select id="selectDia">
+                        <option value="">dias:</option>
+                        @foreach($sala as $sal)
+                        <option value="{{$sal->dataSala}}">dia: {{$sal->dataSala}}</option>
+                        @endforeach
+                    </select>
+
                 </div>
                 <div class="botos">
-                    <button>comprar</button>
+                    <form action="">
+                        @foreach($sala as $sal)
+                        <button type="button" class="card2 horario-item" data-dia='{{$sal->dataSala}}' style="display:none;">
+                            <label for="">{{$sal->horarioSala}}</label>
+                        </button>
+                        @endforeach
+                    </form>
                 </div>
             </form>
         </div>
     </div>
 
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('#selectDia').on('change', function() {
+            let diaSelecionado = $(this).val();
+
+            $('.horario-item').hide();
+
+            if (diaSelecionado) {
+                $('.horario-item').each(function() {
+                    if ($(this).data('dia') === diaSelecionado) {
+                        $(this).show();
+                    }
+                });
+            }
+        })
+    })
+</script>
 
 @endsection
