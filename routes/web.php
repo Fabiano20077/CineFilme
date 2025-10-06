@@ -41,9 +41,9 @@ Route::middleware('web')->group(function () {
     Route::get('/filmes', [FilmeController::class, 'index']);
     Route::get('/sobre', fn() => view('usuario.sobre'));
 
+    Route::get('/perfil/{id}', [UsuarioController::class, 'show']);
     // perfil com proteção Auth
     Route::middleware('auth')->group(function () {
-        Route::get('/perfil/{id}', [UsuarioController::class, 'show']);
         Route::get('/perfil-edit/{id}', [UsuarioController::class, 'edit']);
         Route::post('/perfil-update/{id}', [UsuarioController::class, 'update']);
         Route::get('/perfil-delete/{id}', [UsuarioController::class, 'destroy']);
@@ -57,12 +57,4 @@ Route::middleware('web')->group(function () {
     Route::get('/contatos', [ContatoController::class, 'index']);
     Route::post('/contatos-insert', [ContatoController::class, 'store']);
 
-    Route::get('/teste-auth', function () {
-    return [
-        'auth_check' => Auth::check(),
-        'user' => Auth::user(),
-        'session_id' => session()->getId(),
-        'session_data' => session()->all(),
-    ];
-})->middleware('web');
 });
