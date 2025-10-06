@@ -8,10 +8,10 @@
 
 
 <div class="container">
-    <h1> nome: {{$user->name}}</h1>
+    <h3> nome: {{$user->name}}</h3>
     <h3> email: {{$user->email}}</h3>
-        <a href="/perfil-edit/{{ Auth::user()->idUsers}}">edita</a>
-        <a href="/perfil-delete/{{ Auth::user()->idUsers}}">sair</a>
+        <a class="edita" href="/perfil-edit/{{ Auth::user()->idUsers}}">edita</a>
+        <a class="sai" href="/perfil-delete/{{ Auth::user()->idUsers}}">sair</a>
 </div>
 
 

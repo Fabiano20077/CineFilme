@@ -1,4 +1,24 @@
 .container{
     display: flex;
     flex-direction: column;
+    border: 2px solid #1E3888;
+    margin-left: 35%;
+    margin-top: 10%;
+    padding: 5%;
+    width: 20%;
+}
+h3{
+    text-transform: uppercase;
+    color: #FFF275;
+    align-self: center;
+    justify-self: center;
+}
+.edita{
+    color: #FF3C38;
+    text-decoration: none;
+
+}
+.sai{
+    color: #1E3888;
+    text-decoration: none;
 }

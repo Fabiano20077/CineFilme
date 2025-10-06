@@ -28,7 +28,7 @@
             <a class="login-text" href="/login1">login</a>
             @else 
             <div class="perfil">
-                <a href="/perfil/{{ Auth::user()->idUsers }}">ver perfil</a>
+                <a class="perfil-tex" href="/perfil/{{ Auth::user()->idUsers }}">ver perfil</a>
             </div>
             @endif
         </div>

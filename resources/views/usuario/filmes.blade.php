@@ -23,7 +23,7 @@
             <label for="">lançamento:</label> {{ $filme->lancamento }}
         </p>
 
-        <a href="/ingressos/{{$filme->idFilme}}"> ingressos</a>
+        <a class="ingressos" href="/ingressos/{{$filme->idFilme}}"> ingressos</a>
         
     </div>
     @endforeach
