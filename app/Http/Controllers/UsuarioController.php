@@ -22,21 +22,30 @@ class UsuarioController extends Controller
 
     public function fazerLogin(Request $request)
     {
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
 
-        if (!Auth::attempt($request->only(['email', 'password']))) {
-            return redirect('/login');
-        } else {
-            return redirect()->action('App\Http\Controllers\FilmeController@indexHome');
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate(); // 🔑 importante para manter o login ativo
+            return redirect()->route('home');  // 🔁 redireciona para rota nomeada
         }
+
+        return back()->withErrors([
+            'email' => 'Credenciais inválidas.',
+        ])->onlyInput('email');
     }
 
 
-    public function fazerLogout()
-    {
+    public function fazerLogout(Request $request)
+{
+    Auth::logout();
+    $request->session()->invalidate();      // remove dados antigos
+    $request->session()->regenerateToken(); // evita CSRF inválido
+    return redirect('/login1');             // sua rota de login
+}
 
-        Auth::logout();
-        return redirect('/login');
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -98,7 +107,7 @@ class UsuarioController extends Controller
      */
     public function destroy(string $id)
     {
-      /*   $user = User::find($id)->delete(); */
+        /*   $user = User::find($id)->delete(); */
         Auth::logout();
         return redirect()->action('App\Http\Controllers\FilmeController@indexHome');
     }

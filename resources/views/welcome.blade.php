@@ -6,11 +6,18 @@
 
 @section('conteudo')
 
-<div class="welcome">
-    
-</div>
-<div class="containerCarrousel">
+@php
 
+$user = Auth::user();
+
+@endphp
+
+@if(Auth::check())
+    Logado como: {{ Auth::user()->name }}
+@else
+    Não logado
+@endif
+<div class="containerCarrousel">
 
     <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
         <div class="carousel-inner">
@@ -56,12 +63,7 @@
     </div>
     <div class="cataz">
 
-    
-
         @foreach($filmes->take(5) as $filme)
-
-
-       
 
         <div class="filme-card">
             <div class="card55">

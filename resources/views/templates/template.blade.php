@@ -24,9 +24,9 @@
             
         </ul>
         <div class="login">
-            @if(!Auth::check()):
-            <a class="login-text" href="/login">login</a>
-            @else :
+            @if(!Auth::check())
+            <a class="login-text" href="/login1">login</a>
+            @else 
             <div class="perfil">
                 <a href="/perfil/{{ Auth::user()->id }}">ver perfil</a>
             </div>

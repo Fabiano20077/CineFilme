@@ -10,17 +10,6 @@
 </head>
 
 <body>
-    <nav>
-        <div class="logo">
-            <img src="{{url('assets/img/nomeNav.png')}}" alt="CineFilme" class="nomeNav">
-        </div>
-        <ul>
-            <li><a href="/">home</a></li>
-            <li><a href="/filmes">filme</a></li>
-            <li><a href="/sobre">sobre</a></li>
-            <li><a href="#">alguma</a></li>
-        </ul>
-    </nav>
     <div class="containerLogin">
 
         <form class="login" action="/cadastro" method="post">
@@ -34,8 +23,9 @@
             <input type="password" name="senha" required>
             <label for=""> confirma senha:</label>
             <input type="password" name="" required>
-
-            <button class="botao"> cadastrar </button>
+            <div class="botoes">
+                <button class="botao"> cadastrar </button>
+            </div>
         </form>
 
     </div>

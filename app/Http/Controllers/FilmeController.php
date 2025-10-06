@@ -8,6 +8,7 @@ use App\Models\filmeModel;
 use Illuminate\Support\Facades\Storage;
 use App\Models\generoModel;
 use App\Models\salaModel;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\View\View;
 use League\CommonMark\Extension\CommonMark\Node\Inline\Strong;
 
@@ -68,7 +69,6 @@ class FilmeController extends Controller
         $filmes = filmeModel::all();
 
         // return $filmes;
-
         return view('welcome', compact('filmes'));
     }
 

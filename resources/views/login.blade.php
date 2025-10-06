@@ -11,20 +11,9 @@
 
 <body>
 
-    <nav>
-        <div class="logo">
-            <img src="{{url('assets/img/nomeNav.png')}}" alt="CineFilme" class="nomeNav">
-        </div>
-        <ul>
-            <li><a href="/">home</a></li>
-            <li><a href="/filmes">filme</a></li>
-            <li><a href="/sobre">sobre</a></li>
-            
-        </ul>
-    </nav>
     <div class="containerLogin">
 
-        <form class="login" action="/fazerLogin" method="get">
+        <form class="login" action="/fazerLogin" method="post">
             @csrf
             <h1>login</h1>
 
@@ -32,8 +21,10 @@
             <input type="text" name="email">
             <label for="">SENHA:</label>
             <input type="password" name="password">
-            <p>não tenho conta? <a href="/cadastro" class="link">clique aqui</a></p>
-            <button> ENTRAR</button>
+            <div class="botoes">
+                <p>não tenho conta? <a href="/cadastro" class="link">clique aqui</a></p>
+                <button >ENTRAR</button>
+            </div>
         </form>
 
     </div>
