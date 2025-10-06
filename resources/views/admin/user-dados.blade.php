@@ -12,9 +12,9 @@
             <img src="{{url('assets/img/nomeNav.png')}}" alt="CineFilme" class="nomeNav">
         </div>
         <ul>
-            <li><a href="/">Filmes</a></li>
-            <li><a href="/">Usuarios</a></li>
-            <li><a href="/">Config</a></li>
+            <li><a href="/filmes">Filmes</a></li>
+            <li><a href="/usuarios">Usuarios</a></li>
+            <li><a href="/config">Config</a></li>
             
         </ul>
 </nav>

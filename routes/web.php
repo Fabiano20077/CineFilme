@@ -29,6 +29,7 @@ Route::middleware('web')->group(function () {
     Route::post('/addFilmes', [FilmeController::class, 'store']);
     Route::get('/addsala', [SalaController::class, 'index']);
     Route::post('/sala-insert', [SalaController::class, 'store']);
+    Route::get('/usuario', [usuasriosController::class, 'index']);
 
     // usuario
     Route::view('/login1', 'login');

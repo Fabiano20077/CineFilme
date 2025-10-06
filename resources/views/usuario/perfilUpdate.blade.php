@@ -6,7 +6,7 @@
 @endsection
 @section('conteudo')
 
-<form action="/perfil-update/{{$user->id}}" method="post">
+<form action="/perfil-update/{{Auth::user()->idUsers}}" method="post">
 
 {{csrf_field()}}
     <label for="">novo nome:</label>
