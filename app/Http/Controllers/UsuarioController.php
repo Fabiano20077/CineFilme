@@ -22,17 +22,18 @@ class UsuarioController extends Controller
 
     public function fazerLogin(Request $request)
     {
-        $credentials = $request->validate([
-            'email' => 'required|',
-            'password' => 'required',
-        ],
-    []);
+        $credentials = $request->validate(
+            [
+                'email' => 'required|',
+                'password' => 'required',
+            ],
+            []
+        );
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate(); // 🔑 importante para manter o login ativo
             return redirect()->route('home');  // 🔁 redireciona para rota nomeada
         } else {
-            
         }
 
         return back()->withErrors([
@@ -110,9 +111,29 @@ class UsuarioController extends Controller
     public function update(Request $request, string $id)
     {
         $user = User::find($id);
-        $user->update(['name' => $request->nome]);
-        $user->update(['email' => $request->email]);
-        return redirect()->action('App\Http\Controllers\FilmeController@indexHome');
+
+        $request->validate(
+            [
+                'email' => 'unique|email',
+            ],
+            [
+                'email.unique' => 'este email ja existe no banco de dados',
+                'email.email' => 'este email esta invalido'
+            ]
+        );
+
+        if(Hash::check($request->senhaAntiga,$user->password)){
+
+            $user->update(['name' => $request->nome]);
+            $user->update(['email' => $request->email]);
+            $user->update(['password' => Hash::make( $request->senhaNova)]);
+            return redirect()->action('App\Http\Controllers\FilmeController@indexHome');
+
+        }else {
+
+        };
+
+
     }
 
     /**

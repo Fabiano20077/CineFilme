@@ -22,11 +22,24 @@
     height: 220px;
     border-radius: 50%;
     border: 1px solid black;
+    background-color: white;
 }
 
 .from-update{
 display: flex;
 height: 90%;
+}
+
+.botoes{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    height: 10%;
+}
+
+.botoesLados{
+    width: 30%;
+    border: 1px solid black;
 }
 
 .lados{

@@ -7,33 +7,40 @@
 @section('conteudo')
 
 <div class="container">
-    <img class="image" src="#" alt="">
+    <img class="image" src="{{url('assets/img/perfil.png')}}" alt="">
     <div class="card-perfil">
         <form action="/perfil-update/{{Auth::user()->idUsers}}" method="post" class="from-update">
             <div class="lados">
                 <div class="texto">
                     <label for="">Nome:</label>
-                    <input id="botao" type="text" class="input" name="email" value="{{$user->name}}" disabled>
+                    <input class="botao" type="text" class="input" name="email" value="{{$user->name}}" disabled>
                 </div>
 
                 <div class="texto">
                     <label for="">Email:</label>
-                    <input id="botao" type="text" class="input" name="email" value="{{$user->email}}" disabled>
+                    <input class="botao" type="text" class="input" name="email" value="{{$user->email}}" disabled>
                 </div>
             </div>
             <div class="lados">
                 <div class="texto">
-                    <label for="">senha passada:</label>
-                    <input id="botao" type="text" class="input" name="email" value="" disabled>
+                    <label for="">senha antiga:</label>
+                    <input class="botao" type="text" class="input" name="senhaAntiga" value="" disabled>
                 </div>
                 <div class="texto">
                     <label for="">senha nova:</label>
-                    <input id="botao" type="text" class="input" name="email" value="" disabled>
+                    <input class="botao" type="text" class="input" name="senhaNova" value="" disabled>
                 </div>
             </div>
         </form>
-        <button class="editar"> editar </button>
-        <a class="sai" href="/perfil-delete/{{ Auth::user()->idUsers}}">sair</a>
+        <div class="botoes">
+            <div class="botoesLados">
+                <button class="editar" value="1"> editar </button>
+                <a class="sai" href="/perfil-delete/{{ Auth::user()->idUsers}}">sair</a>
+            </div>
+            <div class="botoesLados add">
+
+            </div>
+        </div>
     </div>
 </div>
 
