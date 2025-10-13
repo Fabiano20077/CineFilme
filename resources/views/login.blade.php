@@ -15,15 +15,19 @@
 
         <form class="login" action="/fazerLogin" method="post">
             @csrf
+            @error('email')
+            <h1 style="color: red;">usuario nao existe</h1>
+            @else
             <h1>login</h1>
+            @enderror
 
             <label for="">EMAIL:</label>
-            <input type="text" name="email">
+            <input type="text" name="email" value="{{old('email')}}" >
             <label for="">SENHA:</label>
             <input type="password" name="password">
             <div class="botoes">
                 <p>não tenho conta? <a href="/cadastro" class="link">clique aqui</a></p>
-                <button >ENTRAR</button>
+                <button>ENTRAR</button>
             </div>
         </form>
 

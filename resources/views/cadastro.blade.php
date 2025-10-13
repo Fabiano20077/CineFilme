@@ -16,21 +16,26 @@
             @csrf
             <h1>cadastro</h1>
             <label for="">nome:</label>
-            <input type="text" name="nome" required>
+            <input type="text" name="nome" value="{{old('nome')}}" required>
+
+            @error('email')
+            <label for="" style="color: red;">{{$message}}</label>
+            @else
             <label for="">Email:</label>
-            <input type="email" name="email" required>
+            @enderror
+            <input type="email" name="email" value="{{old('email')}}"  required>
             <label for="">senha:</label>
-            <input type="password" name="senha" required>
+            <input id="senha" type="password" name="senha" value="{{old('senha')}}"  required>
             <label for=""> confirma senha:</label>
-            <input type="password" name="" required>
+            <input id="senha2" type="password" name="" required>
             <div class="botoes">
-                <button class="botao"> cadastrar </button>
+                <button type="button" class="botao"> cadastrar </button>
             </div>
         </form>
 
     </div>
 
-
+    <script src="{{url('assets/js/script.js')}}"></script>
 </body>
 
 </html>

@@ -21,12 +21,12 @@
             <li><a href="/">home</a></li>
             <li><a href="/filmes">filme</a></li>
             <li><a href="/sobre">sobre</a></li>
-            
+
         </ul>
         <div class="login">
             @if(!Auth::check())
             <a class="login-text" href="/login1">login</a>
-            @else 
+            @else
             <div class="perfil">
                 <a class="perfil-tex" href="/perfil/{{ Auth::user()->idUsers }}">ver perfil</a>
             </div>
@@ -44,6 +44,8 @@
     <script>
         AOS.init(); // Inicializa
     </script>
+
+   
 </body>
 
 </html>

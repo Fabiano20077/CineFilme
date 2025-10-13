@@ -12,11 +12,7 @@ $user = Auth::user();
 
 @endphp
 
-@if(Auth::check())
-    Logado como: {{ Auth::user()->name }}
-@else
-    Não logado
-@endif
+
 <div class="containerCarrousel">
 
     <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">

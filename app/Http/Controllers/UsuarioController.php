@@ -23,13 +23,16 @@ class UsuarioController extends Controller
     public function fazerLogin(Request $request)
     {
         $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-        ]);
+            'email' => 'required|',
+            'password' => 'required',
+        ],
+    []);
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate(); // 🔑 importante para manter o login ativo
             return redirect()->route('home');  // 🔁 redireciona para rota nomeada
+        } else {
+            
         }
 
         return back()->withErrors([
@@ -39,12 +42,12 @@ class UsuarioController extends Controller
 
 
     public function fazerLogout(Request $request)
-{
-    Auth::logout();
-    $request->session()->invalidate();      // remove dados antigos
-    $request->session()->regenerateToken(); // evita CSRF inválido
-    return redirect('/login1');             // sua rota de login
-}
+    {
+        Auth::logout();
+        $request->session()->invalidate();      // remove dados antigos
+        $request->session()->regenerateToken(); // evita CSRF inválido
+        return redirect('/login1');             // sua rota de login
+    }
 
 
     /**
@@ -60,6 +63,16 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate(
+            [
+                'email' => 'unique:users',
+            ],
+            [
+                'email.unique' => 'este usuario ja existe',
+            ]
+        );
+
         $user = new User();
         $user->name = $request->nome;
         $user->email = $request->email;
