@@ -1,10 +1,12 @@
 @extends('templates.admTemplate')
 @section('headC')
-
+<link rel="stylesheet" href="{{ asset('assets/css/addFilme.css') }}">
 @endsection
 @section('conteudoC')
 
+<div class="container">
 
+<div class="caixa">
 <h1>filme add:</h1>
 <form action="/addFilmes" method="post">
     @csrf
@@ -28,7 +30,8 @@
     <button> cadastra</button>
 
 </form>
-
+</div>
+</div>
 
 @foreach($filme as $fil)
 <div class="card">
