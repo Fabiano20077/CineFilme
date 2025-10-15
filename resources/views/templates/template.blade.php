@@ -28,11 +28,24 @@
             <a class="login-text" href="/login1">login</a>
             @else
             <div class="perfil">
-                <a class="perfil-tex" href="/perfil/{{ Auth::user()->idUsers }}">ver perfil</a>
+                 <img class="perfil-tex" src="{{url('assets/img/barrasFundosBg.png')}}" alt="">
             </div>
             @endif
         </div>
     </nav>
+    <div class="menu">
+        <div class="icons">
+            <img class="x" src="{{url('assets/img/x.png')}}" alt="">
+        </div>
+        <div class="opcoes">
+            <div class="escolha">
+                <a href="/perfil/{{ Auth::user()->idUsers }}">perfil</a>
+            </div>
+            <div class="escolha">
+                <a href="/perfil/{{ Auth::user()->idUsers }}">perfil</a>
+            </div>
+        </div>
+    </div>
 
     @yield('conteudo')
 
@@ -45,7 +58,7 @@
         AOS.init(); // Inicializa
     </script>
 
-   
+    <script src="{{url('assets/js/templete.js')}}"></script>
 </body>
 
 </html>

@@ -45,9 +45,8 @@ class UsuarioController extends Controller
     public function fazerLogout(Request $request)
     {
         Auth::logout();
-        $request->session()->invalidate();      // remove dados antigos
-        $request->session()->regenerateToken(); // evita CSRF inválido
-        return redirect('/login1');             // sua rota de login
+        
+        return redirect('/');             // sua rota de login
     }
 
 
@@ -112,28 +111,23 @@ class UsuarioController extends Controller
     {
         $user = User::find($id);
 
-        $request->validate(
-            [
-                'email' => 'unique|email',
-            ],
-            [
-                'email.unique' => 'este email ja existe no banco de dados',
-                'email.email' => 'este email esta invalido'
-            ]
-        );
 
-        if(Hash::check($request->senhaAntiga,$user->password)){
+        if ($request->senhaAntiga == null && $request->senhaNova == null) {
 
             $user->update(['name' => $request->nome]);
             $user->update(['email' => $request->email]);
-            $user->update(['password' => Hash::make( $request->senhaNova)]);
             return redirect()->action('App\Http\Controllers\FilmeController@indexHome');
+        } 
 
-        }else {
+         if (Hash::check($request->senhaAntiga, $user->password)) {
 
+            $user->update(['name' => $request->nome]);
+            $user->update(['email' => $request->email]);
+            $user->update(['password' => Hash::make($request->senhaNova)]);
+            return redirect()->action('App\Http\Controllers\FilmeController@indexHome');
+        } else {
+            echo 'ola0';
         };
-
-
     }
 
     /**

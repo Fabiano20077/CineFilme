@@ -10,10 +10,11 @@
     <img class="image" src="{{url('assets/img/perfil.png')}}" alt="">
     <div class="card-perfil">
         <form action="/perfil-update/{{Auth::user()->idUsers}}" method="post" class="from-update">
+            @csrf
             <div class="lados">
                 <div class="texto">
                     <label for="">Nome:</label>
-                    <input class="botao" type="text" class="input" name="email" value="{{$user->name}}" disabled>
+                    <input class="botao" type="text" class="input" name="nome" value="{{$user->name}}" disabled>
                 </div>
 
                 <div class="texto">
@@ -35,7 +36,7 @@
         <div class="botoes">
             <div class="botoesLados">
                 <button class="editar" value="1"> editar </button>
-                <a class="sai" href="/perfil-delete/{{ Auth::user()->idUsers}}">sair</a>
+                
             </div>
             <div class="botoesLados add">
 

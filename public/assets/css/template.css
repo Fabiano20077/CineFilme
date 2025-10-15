@@ -1,4 +1,5 @@
 body {
+    position: relative;
     margin: 0;
     padding: 0;
     text-transform: capitalize;
@@ -13,12 +14,67 @@ nav {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.perfil-tex{
+    width: 7vh;
+}
+
+.menu {
+    display: var(--display--menu);
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    border: 1px solid black;
+    border-top-left-radius: 2vh;
+    border-bottom-left-radius: 2vh;
+    background-color: #1E3888;
+    z-index: 1;
+}
+
+:root{
+    --display--menu: none;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    padding: 10px;
+   
+}
+
+.x{
+    width: 5vh;
+}
+
+.opcoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+    padding: 10px;
+  
+}
+
+.escolha {
+    width: 50%;
+}
+
+.escolha a {
+    width: 100%;
+    color: white;
+}
+
 .logo {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 20%;
-   
+
 }
 
 .logo-nav {
@@ -31,17 +87,18 @@ nav {
         -1px 1px 0 var(--text--sombra),
         1px 1px 0 var(--text--sombra);
 }
-.nomeNav{
+
+.nomeNav {
     width: 80%;
     height: 100%;
     object-fit: contain;
 }
+
 ul {
     width: 60%;
     margin: 0;
     display: flex;
     list-style: none;
-   
     justify-content: space-evenly;
 }
 
@@ -74,7 +131,7 @@ li a:hover {
     justify-content: center;
 }
 
-.login-text{
+.login-text {
 
     text-decoration: none;
     padding-right: var(--text--paddingL);
@@ -86,7 +143,7 @@ li a:hover {
     color: rgb(255, 255, 255);
 }
 
-.login-text:hover{
+.login-text:hover {
     color: #FF8C42;
 }
 
@@ -94,10 +151,11 @@ li a:hover {
     --text--sombra: rgba(0, 0, 0, .5);
     --text--paddingL: 35px;
     --text--paddingA: 5px;
-    --cor1:#01012e;
+    --cor1: #01012e;
     --cor2: #020248;
 }
-.perfil a{
+
+.perfil a {
     font-size: 17px;
     color: white;
     padding-right: 20px;
@@ -106,6 +164,7 @@ li a:hover {
     text-decoration: none;
     text-transform: uppercase;
 }
-.perfil a:hover{
+
+.perfil a:hover {
     color: #FFF275;
 }
