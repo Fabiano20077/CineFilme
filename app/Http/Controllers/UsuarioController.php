@@ -27,13 +27,14 @@ class UsuarioController extends Controller
                 'email' => 'required|',
                 'password' => 'required',
             ],
-            []
+            
         );
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate(); // 🔑 importante para manter o login ativo
             return redirect()->route('home');  // 🔁 redireciona para rota nomeada
         } else {
+            
         }
 
         return back()->withErrors([

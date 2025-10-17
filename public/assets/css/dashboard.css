@@ -1,0 +1,150 @@
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: "Poppins", sans-serif;
+      }
+
+      body {
+          background-color: #f4f6fa;
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+      }
+
+      /* ---------- Cabeçalho ---------- */
+      header {
+          background-color: #ff9c12;
+          color: #000000;
+          padding: 15px 40px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      aside {
+          width: 220px;
+          background-color: #e98f28;
+          color: #fff;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+      }
+
+      aside a {
+          color: #000000;
+          text-decoration: none;
+          margin-bottom: 15px;
+          display: flex;
+          align-items: center;
+          padding: 10px;
+          border-radius: 8px;
+          transition: 0.3s;
+      }
+
+      header h1 {
+          font-size: 22px;
+      }
+
+      .user-area {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          font-size: 14px;
+      }
+
+      .logout-btn {
+          background-color: #4263eb;
+          border: none;
+          padding: 6px 14px;
+          border-radius: 8px;
+          color: white;
+          cursor: pointer;
+          transition: 0.3s;
+      }
+
+      .logout-btn:hover {
+          background-color: #1b2a61;
+      }
+
+
+      .main {
+          flex: 1;
+          display: flex;
+      }
+
+      /* ---------- Menu lateral ---------- */
+
+      nav {
+          display: flex;
+          gap: 15px;
+          padding: 0;
+      }
+
+      nav a {
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+          color: #000000;
+          font-weight: 500;
+          border-radius: 8px;
+          transition: 0.3s;
+      }
+
+      nav a:hover {
+          background-color: #ffcb76;
+          padding: 3px;
+      }
+
+
+      /* ---------- Conteúdo principal ---------- */
+      .main {
+          flex: 1;
+          padding: 40px;
+      }
+
+      main h2 {
+          font-size: 22px;
+          color: #273878;
+          margin-bottom: 20px;
+      }
+
+      .img-fita {
+          width: 15%;
+          height: auto;
+      }
+
+      .img-icons {
+          height: 20px;
+          width: 20px;
+          margin: 5px;
+
+      }
+
+
+      h1 {
+          display: flex;
+          /* Transforma o <h1> em um contêiner flexível */
+          align-items: center;
+          /* Centraliza o texto e a imagem verticalmente */
+          justify-content: flex-start;
+          /* Mantém os itens no início (esquerda) */
+          margin: 0;
+          /* Remove a margem padrão do h1 */
+
+      }
+
+      .graficos {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          margin: 20px 0;
+      }
+
+      .chart {
+          flex: 1 1 45%;
+          min-width: 300px;
+          height: 500px;
+          margin: 10px;
+      }

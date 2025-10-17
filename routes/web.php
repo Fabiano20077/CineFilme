@@ -1,13 +1,13 @@
 <?php
 
+use App\Http\Controllers\admCotroller;
 use App\Http\Controllers\FilmeController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\admFilmeController;
 use App\Http\Controllers\salaController;
 use App\Http\Controllers\generoController;
 use App\Http\Controllers\ContatoController;
-
-
+use App\Models\admModel;
 use Illuminate\Support\Facades\Route;
 
 
@@ -22,15 +22,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('web')->group(function () {
-    // adm
+Route::get('/loginAdm', function () {
+    return view('loginAdm');
+});
+
+Route::get('/cadaAdm', function () {
+    return view('cadaAdm');
+});
+
+Route::post('/xii', [admCotroller::class, 'store']);
+
+Route::post('/fazerLOginAdm', [admCotroller::class, 'loginAdm']);
+
+Route::middleware('auth:admin')->group(function () {
+
+
     Route::get('/adm', [AdmFilmeController::class, 'index']);
     Route::get('/addfilme', [GeneroController::class, 'index']);
     Route::post('/addFilmes', [FilmeController::class, 'store']);
     Route::get('/addsala', [SalaController::class, 'index']);
     Route::post('/sala-insert', [SalaController::class, 'store']);
-    Route::get('/usuario', [usuasriosController::class, 'index']);
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
+});
 
+
+Route::middleware('web')->group(function () {
     // usuario
     Route::view('/login1', 'login');
     Route::view('/cadastro', 'cadastro');
@@ -57,5 +75,4 @@ Route::middleware('web')->group(function () {
     // contato
     Route::get('/contatos', [ContatoController::class, 'index']);
     Route::post('/contatos-insert', [ContatoController::class, 'store']);
-
 });
