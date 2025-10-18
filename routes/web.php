@@ -43,6 +43,7 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/addfilme', [generoController::class, 'addFilme'])->name('addFilme');
     Route::post('/addFilmes', [FilmeController::class, 'store']);
     Route::get('/editaFilme/{id}', [admCotroller::class, 'editFilme'])->name('editarFilme');
+    Route::post('/updateFilme/{id}', [admCotroller::class, 'updateFilme'])->name('updateFilme');
     Route::get('/addsala', [SalaController::class, 'index'])->name('addSala');
     Route::post('/sala-insert', [SalaController::class, 'store']);
     Route::get('/contatos', [ContatoController::class, 'index'])->name('contatos');
@@ -52,6 +53,8 @@ Route::middleware('auth:admin')->group(function () {
 
     Route::get('/logoutAdm', [admCotroller::class, 'logoutAdm'])->name('logoutAdm');
     Route::get('/destroyAdm/{id}', [admCotroller::class, 'destroyAdm'])->name('deleteAdm');
+
+    Route::get('/buscarFilme', [admCotroller::class, 'buscarFilme'])->name('buscarFilme');
 });
 
 Route::view('/login1', 'login');

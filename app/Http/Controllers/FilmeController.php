@@ -94,7 +94,7 @@ class FilmeController extends Controller
         $filme->created_at = date('Y-m-d');
         $filme->updated_at = date('Y-m-d');
         $filme->save();
-        return view('/admin.adm');
+        return redirect()->route('verFilme');
     }
 
     public function addFilneApi()
