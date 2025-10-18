@@ -18,6 +18,12 @@ class generoController extends Controller
         return view('/admin.adicionarfilme', compact('generos','filme'));
     }
 
+    public function addFilme()
+    {
+        $generos = generoModel::all();
+        return view('/admin.addFilme', compact('generos'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */

@@ -1,21 +1,42 @@
-body {
+.body2 {
     position: relative;
     margin: 0;
     padding: 0;
-    text-transform: capitalize;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #eee;
+    background-color: rgba(0, 0, 0, 0.836);
     height: 100vh;
 }
 
 nav {
     display: flex;
-    background-color: #1E3888;
+    background-color: rgb(0, 0, 0);
+    border-bottom: 1px solid white;
+    width: 100%;
+    height: 10vh;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.perfil-tex{
-    width: 7vh;
+
+ul {
+    width: 60%;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+li {
+    background-color: red;
+    padding: 15px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.808);
+}
+
+li:hover {
+    color: white;
+    background-color: rgba(255, 0, 0, 0.486);
 }
 
 .menu {
@@ -26,14 +47,15 @@ nav {
     right: 0;
     width: 20%;
     height: 100%;
-    border: 1px solid black;
+    border: 1px solid white;
+    border-right: none;
     border-top-left-radius: 2vh;
     border-bottom-left-radius: 2vh;
-    background-color: #1E3888;
+    background-color: rgb(0, 0, 0);
     z-index: 1;
 }
 
-:root{
+:root {
     --display--menu: none;
 }
 
@@ -43,10 +65,13 @@ nav {
     width: 100%;
     height: 10%;
     padding: 10px;
-   
 }
 
-.x{
+.perfil-tex {
+    width: 7vh;
+}
+
+.x {
     width: 5vh;
 }
 
@@ -57,7 +82,7 @@ nav {
     width: 100%;
     height: 90%;
     padding: 10px;
-  
+
 }
 
 .escolha {
@@ -69,12 +94,12 @@ nav {
     color: white;
 }
 
+
 .logo {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 20%;
-
 }
 
 .logo-nav {
@@ -87,38 +112,6 @@ nav {
         -1px 1px 0 var(--text--sombra),
         1px 1px 0 var(--text--sombra);
 }
-
-.nomeNav {
-    width: 80%;
-    height: 100%;
-    object-fit: contain;
-}
-
-ul {
-    width: 60%;
-    margin: 0;
-    display: flex;
-    list-style: none;
-    justify-content: space-evenly;
-}
-
-
-
-li a {
-    text-decoration: none;
-    font-size: 17px;
-    color: white;
-    padding-right: 20px;
-    padding-left: 20px;
-    border-radius: 5px;
-    text-transform: uppercase;
-}
-
-
-li {
-    padding: 15px;
-}
-
 
 
 .login {

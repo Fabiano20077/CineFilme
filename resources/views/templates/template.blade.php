@@ -33,6 +33,9 @@
             @endif
         </div>
     </nav>
+    @if(!Auth::check())
+
+    @else
     <div class="menu">
         <div class="icons">
             <img class="x" src="{{url('assets/img/x.png')}}" alt="">
@@ -42,10 +45,11 @@
                 <a href="/perfil/{{ Auth::user()->idUsers }}">perfil</a>
             </div>
             <div class="escolha">
-                <a href="/perfil/{{ Auth::user()->idUsers }}">perfil</a>
+                <a href="/sair">sair</a>
             </div>
         </div>
     </div>
+    @endif
 
     @yield('conteudo')
 

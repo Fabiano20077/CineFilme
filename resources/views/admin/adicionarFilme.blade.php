@@ -5,41 +5,31 @@
 @section('conteudoC')
 
 <div class="container">
+    <div class="busca">
+        <input class="buscarInput" type="text" placeholder="Buscar Filme">
+        <a class="novoFilme" href="{{route('addFilme')}}">novo fime</a>
+    </div>
+    <div class="filmes">
+        @foreach($filme as $filme)
+        <div class="card">
+            <div class="conteudo3">
+                <img src="{{ asset('storage/'.$filme->poster)}}" alt="{{$filme['titulo']}}">
 
-<div class="caixa">
-<h1>filme add:</h1>
-<form action="/addFilmes" method="post">
-    @csrf
-    <label for=""> titulo filme:</label>
-    <input type="text" name="titulo">
-    <label for="">genero filme:</label>
-    <select name="genero" id="">
-        <option value=""></option>
-        @foreach($generos as $genero)
-        <option value="{{$genero->nomeGenero}}" >{{$genero->nomeGenero}}</option>
+                <h4>{{ $filme->titulo }}</h2>
+
+                    <p>
+                        <label for="">lançamento:</label> {{ $filme->lancamento }}
+                    </p>
+            </div>
+            <div class="edita">
+                <a class="editar" href="{{route('editarFilme', ['id'=> $filme->idFilme])}}">Editar</a>
+                <a class="deleta" href="{{ route('deleteAdm', ['id'=> $filme->idFilme]) }}">Deleta</a>
+            </div>
+
+
+        </div>
         @endforeach
-    </select>
-    <label for="">lançamento:</label>
-    <input type="date" name="lanca">
-    <label for="">classificação:</label>
-    <input type="number" name="classificacao">
-    <label for="">sinopse:</label>
-    <textarea name="sinopse" id=""></textarea>
-    <input type="file">
-
-    <button> cadastra</button>
-
-</form>
+    </div>
 </div>
-</div>
-
-@foreach($filme as $fil)
-<div class="card">
-    <h1>{{$fil->titulo}}</h1>
-    
-    <a href="/">edita</a>
-    <a href="/">deleta</a>
-</div>
-@endforeach
 
 @endsection

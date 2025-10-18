@@ -8,6 +8,7 @@ use App\Http\Controllers\salaController;
 use App\Http\Controllers\generoController;
 use App\Http\Controllers\ContatoController;
 use App\Models\admModel;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Route;
 
 
@@ -24,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/loginAdm', function () {
     return view('loginAdm');
-});
+})->name('loginAdm');
 
 Route::get('/cadaAdm', function () {
     return view('cadaAdm');
@@ -38,22 +39,29 @@ Route::middleware('auth:admin')->group(function () {
 
 
     Route::get('/adm', [AdmFilmeController::class, 'index']);
-    Route::get('/addfilme', [GeneroController::class, 'index']);
+    Route::get('/verfilme', [GeneroController::class, 'index'])->name('verFilme');
+    Route::get('/addfilme', [generoController::class, 'addFilme'])->name('addFilme');
     Route::post('/addFilmes', [FilmeController::class, 'store']);
-    Route::get('/addsala', [SalaController::class, 'index']);
+    Route::get('/editaFilme/{id}', [admCotroller::class, 'editFilme'])->name('editarFilme');
+    Route::get('/addsala', [SalaController::class, 'index'])->name('addSala');
     Route::post('/sala-insert', [SalaController::class, 'store']);
+    Route::get('/contatos', [ContatoController::class, 'index'])->name('contatos');
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
+
+    Route::get('/logoutAdm', [admCotroller::class, 'logoutAdm'])->name('logoutAdm');
+    Route::get('/destroyAdm/{id}', [admCotroller::class, 'destroyAdm'])->name('deleteAdm');
 });
 
+Route::view('/login1', 'login');
+Route::view('/cadastro', 'cadastro');
+Route::post('/cadastro', [UsuarioController::class, 'store']);
+Route::post('/fazerLogin', [UsuarioController::class, 'fazerLogin']);
 
 Route::middleware('web')->group(function () {
     // usuario
-    Route::view('/login1', 'login');
-    Route::view('/cadastro', 'cadastro');
-    Route::post('/cadastro', [UsuarioController::class, 'store']);
-    Route::post('/fazerLogin', [UsuarioController::class, 'fazerLogin']); // POST, não GET
+
     Route::get('/sair', [UsuarioController::class, 'fazerLogout']);
 
     Route::get('/', [FilmeController::class, 'indexHome'])->name('home');
@@ -73,6 +81,6 @@ Route::middleware('web')->group(function () {
     Route::get('/comprar-ingresso/{id}', [FilmeController::class, 'addCadeira']);
 
     // contato
-    Route::get('/contatos', [ContatoController::class, 'index']);
+
     Route::post('/contatos-insert', [ContatoController::class, 'store']);
 });

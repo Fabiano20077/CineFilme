@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\admModel as adm;
+use App\Models\filmeModel as filme;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -11,25 +12,6 @@ use Psy\CodeCleaner\FunctionContextPass;
 
 class admCotroller extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $adm = new adm();
@@ -72,35 +54,26 @@ class admCotroller extends Controller
             )->onlyInput('emailAdm');
         }
     }
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+
+    public function editFilme(string $id)
     {
-        //
+        $filme = filme::find($id);
+
+        return view('admin.editarFilme', compact('filme'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+    public function logoutAdm()
+     {
+        Auth::guard('admin')->logout();
+
+        return redirect()->route('loginAdm');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function destroyAdm(string $id)
     {
-        //
+        $filme = filme::find($id)->delete();
+        
+        return redirect()->route('verFilme');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+    
 }
