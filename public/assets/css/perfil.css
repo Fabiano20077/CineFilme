@@ -33,14 +33,28 @@ height: 90%;
 .botoes{
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
     height: 10%;
 }
 
 .botoesLados{
     width: 30%;
-    border: 1px solid black;
 }
+
+.add {
+    display: flex;
+    justify-content: end;
+}
+
+.editar, #salva {
+    padding: 10px;
+    text-transform: capitalize;
+    color: white;
+    background-color: #FF3C38;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 5px;
+}
+
+
 
 .lados{
     display: flex;
@@ -52,15 +66,22 @@ height: 90%;
 }
 
 .texto{
+    position: relative;
     display: flex;
     width: 70%;
     margin-top: 10px;
     flex-direction: column;
 }
 
+
+
 .input{
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, .3);
+    padding: 5px;
+}
+
+.botao {
     padding: 5px;
 }
 

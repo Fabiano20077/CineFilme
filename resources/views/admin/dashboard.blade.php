@@ -7,6 +7,23 @@
 @section('conteudoC')
 
 <div class="container">
+
+<div class="kpis">
+    <div class="card">
+        <h1 class="cardText">usuarios</h1>
+        <label class="cardN" for="">{{$usuarios}}</label>
+    </div>
+    <div class="card">
+    <h1 class="cardText">Filmes</h1>
+        <label class="cardN" for="">{{$filmes}}</label>
+    </div>
+    <div class="card">
+    <h1 class="cardText">Ingressos</h1>
+        <label class="cardN" for="">{{$ingressos}}</label>
+    </div>
+ 
+</div>
+
     <div class="graficos">
         <!-- Gráfico de Pizza -->
         <div class="chart" id="piechart"></div>
@@ -14,6 +31,10 @@
         <!-- Novo Gráfico de Colunas -->
         <div class="chart" id="barchart"></div>
 
+        <a class="pdfGenero" href="{{route('pdfGenero')}}">PDF</a>
+        <a class="pdfGrafico" href="{{route('PdfGrafico')}}">PDF</a>
+        <a class="csvGenero" href="{{route('csvGenero')}}">csv</a>
+        <a class="csvGrafico" href="{{route('csvGrafico')}}">csv</a>
     </div>
 </div>
 
@@ -30,10 +51,9 @@
         // --- Gráfico de Pizza ---
         var dataPie = google.visualization.arrayToDataTable([
             ['Gênero', 'Quantidade'],
-            ['Ficção', 11],
-            ['Terror', 2],
-            ['Ação', 4],
-            ['Animação', 7]
+            @foreach($generosProcurados as $generos)
+            ['{{$generos->genero}}', {{$generos->totalIngressos}}],
+            @endforeach
         ]);
 
         var optionsPie = {
@@ -62,15 +82,13 @@
         // --- Gráfico de Colunas ---
         var dataBar = google.visualization.arrayToDataTable([
             ['Ano', 'Filmes lançados'],
-            ['2020', 5],
-            ['2021', 8],
-            ['2022', 12],
-            ['2023', 9],
-            ['2024', 14]
+            @foreach($filmeProcurados->take(5) as $filme)
+            ['{{$filme->titulo}}', {{$filme->totalFilmes}}],
+            @endforeach
         ]);
 
         var optionsBar = {
-            title: 'Filmes lançados por ano',
+            title: 'Filmes mais assistidos',
             titleTextStyle: {
                 fontSize: 20,
                 bold: true,

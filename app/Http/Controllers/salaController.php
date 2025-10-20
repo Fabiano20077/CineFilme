@@ -37,7 +37,7 @@ class salaController extends Controller
         $sala->horarioSala = $request->hora;
         $sala->idFilme = $request->select;
         $sala->save();
-        echo 'deu bomm';
+        return redirect()->route('addSala');
         //return redirect()->action('App\Http\Controllers\generoController@index');
     }
 

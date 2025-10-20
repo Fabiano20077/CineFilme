@@ -77,7 +77,7 @@ class admCotroller extends Controller
         return redirect()->route('verFilme');
     }
 
-    public function updateFilme(string $id,Request $request)
+    public function updateFilme(string $id, Request $request)
     {
         $verifica = $request->validate(
             [
@@ -116,16 +116,62 @@ class admCotroller extends Controller
         return redirect()->route('verFilme');
     }
 
-    public function buscarFilme(Request $request) 
+    public function buscarFilme(Request $request)
     {
         $query = filme::query();
 
-        if($request->search ) {
-            $query->where('titulo', 'LIKE',  $request->search. '%');
+        if ($request->search) {
+            $query->where('titulo', 'LIKE',  $request->search . '%');
         }
 
         $filme = $query->get();
 
         return view('admin.filmeTabela', compact('filme'));
+    }
+
+    public function editaAdm(string $id)
+    {
+        $adm = adm::find($id);
+
+        return view('admin.perfilAdm', compact('adm'));
+    }
+
+    public function updateAdm(Request $request, string $id)
+    {
+        $adm = adm::find($id);
+
+        $request->validate(
+            [
+                'nome' => 'string|min:3',
+                'email' => 'required|email',
+                'senhaNova' => 'required|min:5'
+            ],
+            [
+                'nome.string' => 'nome invalido',
+                'nome.min' => 'menos de tres carateres',
+                'email.required' => 'campo vazio',
+                'email.email' => 'email invalidor',
+                'senhaNova.required' => 'campo vazio',
+                'senhaNova.min' => 'senha com menos de 6 caracteres',
+            ]
+            );
+
+
+        if ($request->senhaAntiga == null && $request->senhaNova == null) {
+
+            $adm->update(['nomeAdm' => $request->nome]);
+            $adm->update(['emailAdm' => $request->email]);
+            return redirect()->route('dashboard');
+        }
+
+        if (Hash::check($request->senhaAntiga, $adm->senhaAdm)) {
+
+            $adm->update(['nomeAdm' => $request->nome]);
+            $adm->update(['emailAdm' => $request->email]);
+            $adm->update(['senhaADm' => Hash::make($request->senhaNova)]);
+            return redirect()->route('dashboard');
+        } else {
+            return redirect()->back()->withErrors(['senhaAntiga' => 'Senha errada'])->onlyInput();
+        };
     }
 }

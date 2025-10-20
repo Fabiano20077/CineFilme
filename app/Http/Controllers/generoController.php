@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\filmeModel;
+use App\Models\User as usuario;
+use App\Models\salaModel as sala;
+use App\Models\ingressoModel as ingressos;
 use Illuminate\Http\Request;
 use App\Models\generoModel;
+use Illuminate\Support\Facades\DB;
 
 class generoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $generos = generoModel::all();
@@ -24,51 +25,30 @@ class generoController extends Controller
         return view('/admin.addFilme', compact('generos'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+   public function GenerosProcurados() 
+   {
+      $usuarios = usuario::count();
+      $filmes = filmeModel::count();
+      $ingressos = ingressos::count();
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $generosProcurados = DB::table('ingresso')
+        ->join('sala', 'ingresso.idSala', '=', 'sala.idSala' )
+        ->join('filme', 'sala.idFilme', '=', 'filme.idFilme')
+        ->select('filme.genero', DB::raw('COUNT(*) AS totalIngressos'))
+        ->groupBy('filme.genero')
+        ->orderBy('totalIngressos', 'desc')
+        ->get();
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+        $filmeProcurados = DB::table('ingresso')
+        ->join('sala', 'ingresso.idSala', '=', 'sala.idSala')
+        ->join('filme', 'sala.idFilme', '=', 'filme.idFilme')
+        ->select('filme.titulo' ,DB::raw('COUNT(*) AS totalFilmes'))
+        ->groupBy('filme.titulo')
+        ->orderBy('totalFilmes', 'desc')
+        ->get();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
+      
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+        return view('admin.dashboard', compact('generosProcurados', 'usuarios', 'filmes', 'ingressos','filmeProcurados'));
+   }
 }

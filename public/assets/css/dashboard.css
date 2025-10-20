@@ -1,4 +1,36 @@
+.kpis{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    gap: 10px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 15vh;
+    padding: 10px;
+    background-color: rgb(255, 53, 53);
+    border-radius: 20px;
+    gap: 10px;
+}
+
+.cardText {
+    text-transform: capitalize;
+    color: white;
+    margin: 0;
+}
+
+.cardN {
+    color: white;
+    font-size: 20px;
+}
+
 .graficos {
+    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -14,5 +46,40 @@
     height: 500px;
     margin: 20px;
     border-radius: 10px;
+<<<<<<< HEAD
     background-color: rgba(255, 217, 152, 0.71);
 }
+=======
+    background-color: rgba(0, 0, 0, 0.603);
+}
+
+.pdfGenero, .pdfGrafico, .csvGenero, .csvGrafico {
+    position: absolute;
+    background-color: rgb(255, 53, 53);
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 10px;
+    text-transform: capitalize;
+    color: white;
+}
+
+.pdfGenero{
+    bottom: 5vh;
+    left: 85vh;
+}
+
+.pdfGrafico{
+    bottom: 5vh;
+    left: 200vh;
+}
+
+.csvGenero {
+    bottom: 5vh;
+    left: 75vh;
+}
+
+.csvGrafico {
+    bottom: 5vh;
+    left: 190vh;
+}
+>>>>>>> ac4757c3426d52ceaa94bc8f5266d5eef00ca878
