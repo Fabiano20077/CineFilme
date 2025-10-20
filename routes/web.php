@@ -7,6 +7,7 @@ use App\Http\Controllers\admFilmeController;
 use App\Http\Controllers\salaController;
 use App\Http\Controllers\generoController;
 use App\Http\Controllers\ContatoController;
+use App\Http\Controllers\pdfController;
 use App\Models\admModel;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Route;
@@ -47,9 +48,8 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/addsala', [SalaController::class, 'index'])->name('addSala');
     Route::post('/sala-insert', [SalaController::class, 'store']);
     Route::get('/contatos', [ContatoController::class, 'index'])->name('contatos');
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [generoController::class, 'GenerosProcurados'])->name('dashboard');
+    Route::get('/pdfGeneros',[pdfController::class, 'pdfGenero'])->name('pdfGenero');
 
     Route::get('/logoutAdm', [admCotroller::class, 'logoutAdm'])->name('logoutAdm');
     Route::get('/destroyAdm/{id}', [admCotroller::class, 'destroyAdm'])->name('deleteAdm');

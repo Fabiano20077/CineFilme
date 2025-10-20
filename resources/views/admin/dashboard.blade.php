@@ -6,7 +6,26 @@
 @endsection
 @section('conteudoC')
 
+
+
 <div class="container">
+
+<div class="kpis">
+    <div class="card">
+        <label class="cardText">usuarios</label>
+        <label for="">{{$usuarios}}</label>
+    </div>
+    <div class="card">
+        <label class="cardText">filmes</label>
+        <label for="">{{$filmes}}</label>
+    </div>
+    <div class="card">
+        <label class="cardText">ingressos</label>
+        <label for="">{{$ingressos}}</label>
+    </div>
+ 
+</div>
+
     <div class="graficos">
         <!-- Gráfico de Pizza -->
         <div class="chart" id="piechart"></div>
@@ -14,6 +33,7 @@
         <!-- Novo Gráfico de Colunas -->
         <div class="chart" id="barchart"></div>
 
+        <a class="pdfGenero" href="{{route('pdfGenero')}}">gerar pdf genero </a>
     </div>
 </div>
 
@@ -30,10 +50,9 @@
         // --- Gráfico de Pizza ---
         var dataPie = google.visualization.arrayToDataTable([
             ['Gênero', 'Quantidade'],
-            ['Ficção', 11],
-            ['Terror', 2],
-            ['Ação', 4],
-            ['Animação', 7]
+            @foreach($generosProcurados as $generos)
+            ['{{$generos->genero}}', {{$generos->totalIngressos}}],
+            @endforeach
         ]);
 
         var optionsPie = {
