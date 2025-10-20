@@ -14,9 +14,9 @@
             <div class="lados">
                 <div class="texto">
                     @error('nome')
-                    <label style="color: red">{{$message}}</label>
+                    <label class="labelLegal" style="color: red">{{$message}}</label>
                     @else
-                    <label for="">Nome:</label>
+                    <label class="labelLegal">Nome:</label>
                     @enderror
                     <input class="botao" type="text" class="input" name="nome" value="{{$adm->nomeAdm}}" disabled>
                 </div>
