@@ -50,6 +50,8 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/contatos', [ContatoController::class, 'index'])->name('contatos');
     Route::get('/dashboard', [generoController::class, 'GenerosProcurados'])->name('dashboard');
     Route::get('/pdfGeneros',[pdfController::class, 'pdfGenero'])->name('pdfGenero');
+    Route::get('/relatorioGrafico',[pdfController::class, 'PdfGrafico'])->name('PdfGrafico');
+    
 
     Route::get('/logoutAdm', [admCotroller::class, 'logoutAdm'])->name('logoutAdm');
     Route::get('/destroyAdm/{id}', [admCotroller::class, 'destroyAdm'])->name('deleteAdm');

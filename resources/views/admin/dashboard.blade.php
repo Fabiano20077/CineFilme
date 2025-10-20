@@ -6,22 +6,20 @@
 @endsection
 @section('conteudoC')
 
-
-
 <div class="container">
 
 <div class="kpis">
     <div class="card">
-        <label class="cardText">usuarios</label>
-        <label for="">{{$usuarios}}</label>
+        <h1 class="cardText">usuarios</h1>
+        <label class="cardN" for="">{{$usuarios}}</label>
     </div>
     <div class="card">
-        <label class="cardText">filmes</label>
-        <label for="">{{$filmes}}</label>
+    <h1 class="cardText">Filmes</h1>
+        <label class="cardN" for="">{{$filmes}}</label>
     </div>
     <div class="card">
-        <label class="cardText">ingressos</label>
-        <label for="">{{$ingressos}}</label>
+    <h1 class="cardText">Ingressos</h1>
+        <label class="cardN" for="">{{$ingressos}}</label>
     </div>
  
 </div>
@@ -33,7 +31,8 @@
         <!-- Novo Gráfico de Colunas -->
         <div class="chart" id="barchart"></div>
 
-        <a class="pdfGenero" href="{{route('pdfGenero')}}">gerar pdf genero </a>
+        <a class="pdfGenero" href="{{route('pdfGenero')}}">PDF</a>
+        <a class="pdfGrafico" href="{{route('PdfGrafico')}}">PDF</a>
     </div>
 </div>
 
@@ -81,15 +80,13 @@
         // --- Gráfico de Colunas ---
         var dataBar = google.visualization.arrayToDataTable([
             ['Ano', 'Filmes lançados'],
-            ['2020', 5],
-            ['2021', 8],
-            ['2022', 12],
-            ['2023', 9],
-            ['2024', 14]
+            @foreach($filmeProcurados->take(5) as $filme)
+            ['{{$filme->titulo}}', {{$filme->totalFilmes}}],
+            @endforeach
         ]);
 
         var optionsBar = {
-            title: 'Filmes lançados por ano',
+            title: 'Filmes mais assistidos',
             titleTextStyle: {
                 fontSize: 20,
                 bold: true,

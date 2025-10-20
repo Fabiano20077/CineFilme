@@ -39,7 +39,16 @@ class generoController extends Controller
         ->orderBy('totalIngressos', 'desc')
         ->get();
 
+        $filmeProcurados = DB::table('ingresso')
+        ->join('sala', 'ingresso.idSala', '=', 'sala.idSala')
+        ->join('filme', 'sala.idFilme', '=', 'filme.idFilme')
+        ->select('filme.titulo' ,DB::raw('COUNT(*) AS totalFilmes'))
+        ->groupBy('filme.titulo')
+        ->orderBy('totalFilmes', 'desc')
+        ->get();
 
-        return view('admin.dashboard', compact('generosProcurados', 'usuarios', 'filmes', 'ingressos'));
+      
+
+        return view('admin.dashboard', compact('generosProcurados', 'usuarios', 'filmes', 'ingressos','filmeProcurados'));
    }
 }
