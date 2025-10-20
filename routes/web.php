@@ -49,10 +49,14 @@ Route::middleware('auth:admin')->group(function () {
     Route::post('/sala-insert', [SalaController::class, 'store']);
     Route::get('/contatos', [ContatoController::class, 'index'])->name('contatos');
     Route::get('/dashboard', [generoController::class, 'GenerosProcurados'])->name('dashboard');
+    Route::get('/pdfTudo',[pdfController::class, 'pdfTudo'])->name('pdfTudo');
     Route::get('/pdfGeneros',[pdfController::class, 'pdfGenero'])->name('pdfGenero');
+    Route::get('/csvGenero', [pdfController::class, 'csvGenero'])->name('csvGenero');
+    Route::get('/csvGrafico', [pdfController::class, 'csvGrafico'])->name('csvGrafico');
     Route::get('/relatorioGrafico',[pdfController::class, 'PdfGrafico'])->name('PdfGrafico');
     
-
+    Route::get('/perfilAdm/{id}', [admCotroller::class, 'editaAdm']);
+    Route::post('/update-adm/{id}', [admCotroller::class, 'updateAdm']);
     Route::get('/logoutAdm', [admCotroller::class, 'logoutAdm'])->name('logoutAdm');
     Route::get('/destroyAdm/{id}', [admCotroller::class, 'destroyAdm'])->name('deleteAdm');
 

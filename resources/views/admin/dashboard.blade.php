@@ -33,6 +33,8 @@
 
         <a class="pdfGenero" href="{{route('pdfGenero')}}">PDF</a>
         <a class="pdfGrafico" href="{{route('PdfGrafico')}}">PDF</a>
+        <a class="csvGenero" href="{{route('csvGenero')}}">csv</a>
+        <a class="csvGrafico" href="{{route('csvGrafico')}}">csv</a>
     </div>
 </div>
 

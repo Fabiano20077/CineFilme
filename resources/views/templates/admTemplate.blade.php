@@ -38,7 +38,10 @@
         </div>
         <div class="opcoes">
             <div class="escolha">
-                <a href="/perfil/{{ Auth::user()->idUsers }}">perfil</a>
+                <a href="/perfilAdm/{{  Auth::guard('admin')->id() }}">perfil</a>
+            </div>
+            <div class="escolha">
+                <a href="{{route('pdfTudo')}}">PDF</a>
             </div>
             <div class="escolha">
                 <a href="{{route('logoutAdm')}}">sair</a>

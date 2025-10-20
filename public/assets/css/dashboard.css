@@ -49,7 +49,7 @@
     background-color: rgba(0, 0, 0, 0.603);
 }
 
-.pdfGenero, .pdfGrafico {
+.pdfGenero, .pdfGrafico, .csvGenero, .csvGrafico {
     position: absolute;
     background-color: rgb(255, 53, 53);
     padding: 15px;
@@ -66,5 +66,15 @@
 
 .pdfGrafico{
     bottom: 5vh;
-    left: 195vh;
+    left: 200vh;
+}
+
+.csvGenero {
+    bottom: 5vh;
+    left: 75vh;
+}
+
+.csvGrafico {
+    bottom: 5vh;
+    left: 190vh;
 }
