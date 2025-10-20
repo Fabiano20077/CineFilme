@@ -16,7 +16,7 @@
 .buscarInput {
     width: 90%;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.336);
+    background-color: rgba(128, 128, 128, 0.336);
     border: 1px solid black;
     border-radius: 5px;
     outline: none;
@@ -25,12 +25,13 @@
 }
 
 .novoFilme {
-    background-color: rgb(106, 2, 190);
+    background-color: rgb(255, 94, 0);
     padding: 10px;
     text-decoration: none;
     color: white;
     border-radius: 5px;
     font-size: 20px;
+    text-transform: capitalize;
 }
 
 .inputs {
@@ -54,10 +55,6 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 
-}
-
-.conteudo3 {
-    height: 90%;
 }
 
 .editar {
@@ -101,62 +98,77 @@ label {
 
 .caixa {
     display: flex;
-    flex-direction: column;
-    background-color: white;
-    padding: 10px;
-    width: 70%;
-    height: 80%;
-    text-transform: capitalize;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
     border-radius: 10px;
+    box-shadow: 3px 1px 30px;
+    background-color: #ffffff;
+    height: 50vh;
+    width: 40vw;
+    overflow: hidden;
 }
+
 
 .formCard {
     display: flex;
-    height: 100%;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;     
+    width: 100%;
+    height: 90%;
+    gap: 20px;
 }
 
 .esqueda,
 .direita {
-    width: 50%;
-    height: 100%;
-    border: 1px solid black;
+    display: flex;            
+    flex-direction: column;   
+    justify-content: center;  
+    align-items: center;      
+    width: 50%;               
+    height: 100%;          
+    box-sizing: border-box;
 }
 
-.parte1 {
+.inpute{
+    padding: 5px;
+    border: solid #1E3888;
+    border-radius: 6px;
+    margin: 10px;
+    height: 3.5vh; 
+    width: 9vw;
+}
+.botaoCadastra{
     display: flex;
-    width: 100%;
-    height: 50%;
-    border: 1px solid black;
-}
-
-.parte2 {
-    width: 100%;
-    height: 50%;
-    border: 1px solid black;
-}
-
-.conteudo {
-    display: flex;
-    width: 50%;
-    flex-direction: column;
+    padding: 20px;
     justify-content: center;
     align-items: center;
+    background-color: #3f60c4;
+    border-radius: 5px;
+    color: #ffffff;
+    height: 4vh;
+    cursor: pointer;
+    margin: 0;
+    font-size: 15px;
 }
 
-.conteudo2 {
+.botaoCadastra:hover{
+    background-color: #1E3888;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em; 
+    color: #205cf5; 
+    font-size: 21px;
+  }
+  .botaoWrapper {
     display: flex;
-    width: 100%;
-    flex-direction: column;
-    padding: 10px;
-}
-
-.input{
-    padding: 5px;
-    width: 70%;
-}
-
-textarea{
-    padding: 10px;
-    width: 90%;
-    height: 90%;
+    justify-content: center; /* centraliza horizontal */
+    align-items: center;     /* centraliza vertical */
+    width: 100%;             /* ocupa toda a largura da caixa */
+    margin-top: 20px;        /* opcional, para dar espaço acima */
 }

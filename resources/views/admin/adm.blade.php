@@ -17,9 +17,9 @@
         </div>
         <ul>
             <li><a href="/">Filmes</a></li>
-            <li><a href="/addsala">add sala</a></li>
+            <li><a href="/addsala">Add sala</a></li>
             <li><a href="/">Usuarios</a></li>
-            <li><a href="/contatos">contatos</a></li>
+            <li><a href="/contatos">Contatos</a></li>
         </ul>
 </nav>
 

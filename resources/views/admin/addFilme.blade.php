@@ -7,51 +7,60 @@
 <div class="container2">
 
     <div class="caixa">
-        <form class="formCard" action="/addFilmes" method="post">
+        <form action="/addFilmes" method="post">
             @csrf
-            <div class="esqueda">
-                <div class="parte1">
-                    <div class="conteudo">
-                        <label class="labelText" for=""> titulo filme:</label>
-                        <input class="input" type="text" name="titulo">
+            <div class="formCard">
+                <div class="esqueda">
+
+                    <div>
+                        <label class="labelText" for="">Titulo filme:</label>
+                        <input class="inpute" type="text" name="titulo" placeholder="Digite...">
                     </div>
-                    <div class="conteudo">
-                        <label class="labelText" for="">genero filme:</label>
-                        <select class="input" name="genero" id="">
+                    <div>
+                        <label class="labelText" for="">Gênero filme:</label>
+                        <select class="inpute" name="genero" id="">
                             <option value=""></option>
                             @foreach($generos as $genero)
                             <option value="{{$genero->nomeGenero}}">{{$genero->nomeGenero}}</option>
                             @endforeach
                         </select>
                     </div>
-                </div>
-                <div class="parte1">
-                    <div class="conteudo">
-                        <label for="">lançamento:</label>
-                        <input class="input" type="date" name="lanca">
+
+
+                    <div>
+                        <label for="">Lançamento:</label>
+                        <input class="inpute" type="date" name="lanca" placeholder="Digite...">
                     </div>
-                    <div class="conteudo">
-                        <label for="">classificação:</label>
-                        <input class="input" type="number" name="classificacao">
-                    </div>
-                </div>
-            </div>
-            <div class="direita">
-                <div class="parte2">
-                    <div class="conteudo2">
-                        <label for="">sinopse:</label>
-                        <textarea name="sinopse" id=""></textarea>
-                    </div>
-                </div>
-                <div class="parte2">
-                    <div class="conteudo2">
-                        <input type="file">
-                    </div>
+
+
                 </div>
 
-                <button> cadastra</button>
-            </div>
 
+                <div class="direita">
+
+                    <div>
+                        <label for="">Sinópse:</label>
+                        <textarea class="inpute" style="height: 30%; width: 70%;" name="sinopse" id="" placeholder="Digite..."></textarea>
+                    </div>
+
+
+
+                    <div>
+                        <label for="">Classificação:</label>
+                        <input class="inpute" type="number" name="classificacao" placeholder="Digite...">
+                    </div>
+
+
+                    <div>
+                        <input type="file" name="imagem">
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="botaoWrapper">
+                <button class="botaoCadastra">Cadastrar</button>
+            </div>
         </form>
     </div>
 </div>

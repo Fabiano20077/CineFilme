@@ -22,17 +22,17 @@
             <li onclick="window.location.href='{{route('contatos')}}'">contatos</li>
             <li onclick="window.location.href='{{route('addSala')}}'">addSala</li>
         </ul>
-          <div class="login">
+        <div class="login">
             @if(!Auth::check())
             <a class="login-text" href="/login1">login</a>
             @else
             <div class="perfil">
-                 <img class="perfil-tex" src="{{url('assets/img/barrasFundosBg.png')}}" alt="">
+                <img class="perfil-tex" src="{{url('assets/img/barrasFundosBg.png')}}" alt="">
             </div>
             @endif
         </div>
     </nav>
-        <div class="menu">
+    <div class="menu">
         <div class="icons">
             <img class="x" src="{{url('assets/img/x.png')}}" alt="">
         </div>

@@ -8,7 +8,7 @@
 <div class="container">
     <div class="busca">
         <input id="buscar" class="buscarInput" type="text" placeholder="Buscar Filme">
-        <a class="novoFilme" href="{{route('addFilme')}}">novo fime</a>
+        <a class="novoFilme" href="{{route('addFilme')}}">Novo filme</a>
     </div>
     <div id="tabelaFilme" class="filmes">
       @include('admin.filmeTabela', ['filme'=> $filme])
@@ -32,7 +32,7 @@
                     $('#tabelaFilme').html(response)
                 },
                 error: function() {
-                    alert('erro ao buscar filme')
+                    alert('Erro ao buscar filme')
                 }
             })
         }
