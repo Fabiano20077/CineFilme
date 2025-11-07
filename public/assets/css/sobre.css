@@ -7,14 +7,13 @@
     align-content: center;
     display: flex;
     margin-top: 20px;
-    border-bottom: 10px solid rgba(70, 6, 6, 0.913);
+    border-bottom: 5px solid rgb(0, 0, 0);
 }
 strong{
     font-weight: bolder;
     font-size: 50px;
-    color: #f9f9f9;
+    color: #87d1e7;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-shadow:0px 2px 4px #721313;
     
 }
 .cads {
@@ -46,8 +45,7 @@ strong{
 }
 
 .content {
-    background-color: white;
-    
+    background-color: rgba(0, 204, 255, 0.103);
     width: 50%;
 }
 
@@ -84,7 +82,7 @@ strong{
     align-items: center;
     font-size: 17px;
     font-weight: bold;
-    gap: 5px;
+    gap: 25px;
 }
 .cadImg{
     width: 100%;
@@ -93,15 +91,11 @@ strong{
     
     
 }
-h2{
+h1{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: #3d0808;
+    color: #263438;
 }
-.textLabel {
-    padding: 5px;
-    font-size: 17px;
-    color:#1d0505;
-}
+
 
 .inputs{
     padding: 5px;
@@ -109,7 +103,9 @@ h2{
     font-size: 17px;
     border-radius: 10px;
     border-width: 0;
-    box-shadow: 0px 4px 5px rgba(109, 3, 3, 0.644);
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #007194;
 }
 
 
@@ -118,12 +114,11 @@ button{
     color: rgb(0, 0, 0);
     background-color: #f9f9f9;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    box-shadow: 0px 2px 5px rgb(123, 6, 6);
     padding: 10px;
-
     font-size: 17px;
     cursor: pointer;
-    border: 0;
+    border-width: 2px solid;
+    border-color: #87d1e7;
     margin-left: 70%;
     
 }

@@ -23,21 +23,37 @@
 
 .sessoes{
     display: flex;
+    border: 1px solid black;
+    padding: 60px;
+
+}
+h1{
+    color: rgb(0, 113, 133);
+    font-weight: 800;
+
 }
 
 select{
     padding: 10px;
     font-size: 20px;
-    border-radius: 5px;
-    background-color: rgba(137, 43, 226, 0.683);
-    color: white;
+    border-radius: 10px;
+    width: 20%;
+    background-color: #87d1e7;
+    color: rgb(0, 0, 0);
+    border: 0;
     text-transform: capitalize;
 }
-
+select:hover{
+    background-color: rgb(102, 182, 253);
+    transition: 1.5s;
+    color: #ffffff;
+}
 .imagem{
     padding: 10px;
 }
-
+img{
+     border-radius: 20px;
+}
 .botos{
     display: flex;
     align-items: center;
@@ -45,6 +61,7 @@ select{
     height: 350px;
     padding: 10px;
     overflow: scroll;
+    border: #87d1e7 2px solid;
     gap: 10px;
 }
 

@@ -66,7 +66,7 @@
     <div class="if">
         <div class="cardao" data-aos="fade-up">
             <div class="img2">
-            <img src="{{url('assets/img/contato_img.jpg')}}" alt="cad" class="cadImg">
+            <img src="{{url('assets/img/contato_img.png')}}" alt="cad" class="cadImg">
             </div>
             <div class="content">
            
@@ -74,13 +74,9 @@
                     <h1>contatos</h1>
 
                     @csrf 
-
-                        <label class="textLabel" >Nome:</label>
-                        <input class="inputs" type="text" name="nome">
-                        <label class="textLabel" >Email:</label>
-                        <input class="inputs"  type="text" name="email">
-                        <label class="textLabel" >Telefone:</label>
-                        <input class="inputs"  type="text" name="telefone">
+                        <input class="inputs" type="text" name="nome" placeholder="Nome">
+                        <input class="inputs"  type="text" name="email" placeholder="Email">
+                        <input class="inputs"  type="text" name="telefone" placeholder="Telefone">
 
                         <button type="submit"> Enviar</button>
 

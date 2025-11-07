@@ -8,7 +8,7 @@
 
 nav {
     display: flex;
-    background-color:rgba(255, 217, 152, 0.71);
+    background-color:rgba(255, 165, 80, 0.404);
     border-bottom: 1px solid white;
     width: 100%;
     height: 12vh;
@@ -36,8 +36,7 @@ li {
 }
 
 li:hover {
-    color: rgb(0, 0, 0);
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 .menu {
@@ -103,10 +102,11 @@ li:hover {
     align-items: center;
     justify-content: center;
     width: 20%;
+
 }
 
 .logo-nav {
-    color: #ff9f38;
+    color: #FF3C38;
     margin: 0;
     font-size: 40px;
     text-shadow:
@@ -115,6 +115,13 @@ li:hover {
         -1px 1px 0 var(--text--sombra),
         1px 1px 0 var(--text--sombra);
 }
+
+.nomeNav {
+    width: 80%;
+    height: 100%;
+    object-fit: contain;
+}
+
 
 
 .login {

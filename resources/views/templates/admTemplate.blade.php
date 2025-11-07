@@ -14,7 +14,7 @@
 <body class="body2">
     <nav>
         <div class="logo">
-            <h1 class="logo-nav">CineFilme</h1>
+            <img src="{{url('assets/img/nomeNavAdm.png')}}" alt="CineFilme" class="nomeNav">
         </div>
         <ul>
             <li onclick="window.location.href='{{route('dashboard')}}'">dashboard</li>

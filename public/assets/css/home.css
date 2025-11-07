@@ -14,7 +14,8 @@ body{
     height: 560px;
 }
 h2{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #73d2f8;
+    font-weight: 800;
 }
 .titulo {
     display: flex;
@@ -26,7 +27,7 @@ h2{
     position: absolute;
     top: 80%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: #FF8C42;
+    color: #73d2f8;
 }
 
 .cataz {
@@ -34,6 +35,7 @@ h2{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 8%;
 }
 
 

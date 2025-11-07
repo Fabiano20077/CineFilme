@@ -18,13 +18,11 @@
             @error('email')
             <h1 style="color: red;">usuario nao existe</h1>
             @else
-            <h1>login</h1>
+            <h2>Login</h2>
             @enderror
 
-            <label for="">EMAIL:</label>
-            <input type="text" name="email" value="{{old('email')}}" >
-            <label for="">SENHA:</label>
-            <input type="password" name="password">
+            <input type="text" name="email" value="{{old('email')}}" placeholder="Email:" >
+            <input type="password" name="password" placeholder="Senha:">
             <div class="botoes">
                 <p>não tenho conta? <a href="/cadastro" class="link">clique aqui</a></p>
                 <button>ENTRAR</button>

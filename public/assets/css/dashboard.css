@@ -1,3 +1,6 @@
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 .kpis{
     display: flex;
     justify-content: space-evenly;
@@ -13,11 +16,14 @@
     width: 25%;
     height: 15vh;
     padding: 10px;
-    background-color: rgb(255, 53, 53);
+    background-color: rgb(238, 130, 29);
     border-radius: 20px;
     gap: 10px;
 }
-
+.card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 107, 8, 0.514);
+}
 .cardText {
     text-transform: capitalize;
     color: white;
@@ -46,40 +52,5 @@
     height: 500px;
     margin: 20px;
     border-radius: 10px;
-<<<<<<< HEAD
-    background-color: rgba(255, 217, 152, 0.71);
+    background-color: rgba(255, 200, 148, 0.71);
 }
-=======
-    background-color: rgba(0, 0, 0, 0.603);
-}
-
-.pdfGenero, .pdfGrafico, .csvGenero, .csvGrafico {
-    position: absolute;
-    background-color: rgb(255, 53, 53);
-    padding: 15px;
-    text-decoration: none;
-    border-radius: 10px;
-    text-transform: capitalize;
-    color: white;
-}
-
-.pdfGenero{
-    bottom: 5vh;
-    left: 85vh;
-}
-
-.pdfGrafico{
-    bottom: 5vh;
-    left: 200vh;
-}
-
-.csvGenero {
-    bottom: 5vh;
-    left: 75vh;
-}
-
-.csvGrafico {
-    bottom: 5vh;
-    left: 190vh;
-}
->>>>>>> ac4757c3426d52ceaa94bc8f5266d5eef00ca878

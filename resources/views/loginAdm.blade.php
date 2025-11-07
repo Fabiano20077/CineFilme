@@ -18,21 +18,20 @@
             @error('emailInvalido')
             <h1 style="color: red; font-size:25px;">usuario nao existe ou email/senhas incorretos</h1>
             @else
-            <h1>login para o adm</h1>
+            <h2>Login - Adm</h2>
             @enderror
 
             @error('emailAdm')
             <label style="color: red">{{$message}}</label>
             @else
-            <label for="">EMAIL:</label>
             @enderror
-            <input type="text" name="emailAdm" value="{{old('emailAdm')}}">
+            <input type="text" name="emailAdm" value="{{old('emailAdm')}}" placeholder="Email">
             @error('senhaAdm')
             <label style="color: red" for="">{{$message}}</label>
             @else
-            <label for="">SENHA:</label>
             @enderror
-            <input type="password" name="senhaAdm">
+            <input type="password" name="senhaAdm" placeholder="Senha:">
+            <p>não tenho conta? <a href="/cadaAdm" class="link">clique aqui</a></p>
             <div class="botoes">
                 <button>ENTRAR</button>
             </div>

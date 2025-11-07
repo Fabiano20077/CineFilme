@@ -68,9 +68,8 @@ $user = Auth::user();
                     <img class="img2" src="{{asset('storage/'.$filme->poster) }}">
                 </div>
                 <div class="conteudo">
-                    <div>
                         <h2>{{$filme->titulo}}</h2>
-                    </div>
+                    
                     <div class="if">
 
                         <label for="">genero: {{$filme->genero}} </label>
