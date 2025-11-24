@@ -1,39 +1,208 @@
-
-.container{
+.container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 80vh;
-}
-.caixa{
-    padding: 10px;
-    align-items:center ;
     justify-content: center;
-    border-radius: 5px;
-    height: 50%;
-    width: 40%;
-    border:solid 2px #00348e;
-    display: flex;
-}
-.inputs{
-    padding: 5px;
-    font-size: 15px;
-    margin: 10px;
-    border-radius: 3px;
-}
-button{
-    padding: 10px ;
-    border-radius: 5px;
-    height: 10%;
-    width: 20%;
-    background-color: rgb(0, 0, 110);
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    transition: all;
-}
-button:hover{
-    transition: 2s;
-    transform:translateY(2px);
-    background-color: rgb(0, 0, 54);
+   
 }
 
+.caixa {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.inputs {
+    padding: 15px 20px;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: #fff;
+    color: #333;
+    outline: none;
+}
+
+.inputs:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+.inputs::placeholder {
+    color: #a0a0a0;
+}
+
+select.inputs {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667eea' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+    padding-right: 45px;
+    cursor: pointer;
+}
+
+select.inputs option {
+    padding: 12px;
+    background: #fff;
+    color: #333;
+}
+
+select.inputs option:hover {
+    background: #667eea;
+    color: white;
+}
+
+button {
+    padding: 16px 40px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+/* Animações suaves */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.caixa {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        max-width: 100%;
+    }
+    
+    .caixa {
+        padding: 30px 20px;
+        margin: 10px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .inputs {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+    
+    button {
+        padding: 14px 30px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .caixa {
+        padding: 25px 15px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    form {
+        gap: 20px;
+    }
+}
+
+/* Estados de validação */
+.inputs:valid {
+    border-color: #4CAF50;
+}
+
+.inputs:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: #f44336;
+}
+
+/* Loading state para o botão */
+button.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+button.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}

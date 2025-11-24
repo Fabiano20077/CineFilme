@@ -2,7 +2,7 @@
  @foreach($filme as $filme)
  <div class="card">
      <div class="conteudo3">
-         <img src="{{ asset('storage/'.$filme->poster)}}" alt="{{$filme['titulo']}}">
+         <img class="imgIcon" src="{{ asset('storage/'.$filme->poster)}}" alt="{{$filme['titulo']}}">
 
          <h4>{{ $filme->titulo }}</h2>
 

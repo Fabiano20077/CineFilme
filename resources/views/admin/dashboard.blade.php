@@ -8,21 +8,21 @@
 
 <div class="container">
 
-<div class="kpis">
-    <div class="card">
-        <h1 class="cardText">usuarios</h1>
-        <label class="cardN" for="">{{$usuarios}}</label>
+    <div class="kpis">
+        <div class="card">
+            <h1 class="cardText">usuarios</h1>
+            <label class="cardN" for="">{{$usuarios}}</label>
+        </div>
+        <div class="card">
+            <h1 class="cardText">Filmes</h1>
+            <label class="cardN" for="">{{$filmes}}</label>
+        </div>
+        <div class="card">
+            <h1 class="cardText">Ingressos</h1>
+            <label class="cardN" for="">{{$ingressos}}</label>
+        </div>
+
     </div>
-    <div class="card">
-    <h1 class="cardText">Filmes</h1>
-        <label class="cardN" for="">{{$filmes}}</label>
-    </div>
-    <div class="card">
-    <h1 class="cardText">Ingressos</h1>
-        <label class="cardN" for="">{{$ingressos}}</label>
-    </div>
- 
-</div>
 
     <div class="graficos">
         <!-- Gráfico de Pizza -->
@@ -33,7 +33,7 @@
 
         <a class="pdfGenero" href="{{route('pdfGenero')}}">PDF</a>
         <a class="pdfGrafico" href="{{route('PdfGrafico')}}">PDF</a>
-        <a class="csvGenero" href="{{route('csvGenero')}}">csv</a>
+        <a class="csvGenero" href="{{route('csvGenero')}}">CSV</a>
         <a class="csvGrafico" href="{{route('csvGrafico')}}">csv</a>
     </div>
 </div>
@@ -51,8 +51,7 @@
         // --- Gráfico de Pizza ---
         var dataPie = google.visualization.arrayToDataTable([
             ['Gênero', 'Quantidade'],
-            @foreach($generosProcurados as $generos)
-            ['{{$generos->genero}}', {{$generos->totalIngressos}}],
+            @foreach($generosProcurados as $generos)['{{$generos->genero}}', {{$generos -> totalIngressos}}],
             @endforeach
         ]);
 
@@ -61,12 +60,12 @@
             titleTextStyle: {
                 fontSize: 20,
                 bold: true,
-                color: '#fff'
+                color: 'black'
             },
             backgroundColor: 'transparent',
             legend: {
                 textStyle: {
-                    color: '#ddd',
+                    color: 'black',
                     fontSize: 14
                 }
             },
@@ -75,15 +74,14 @@
             }
         };
 
-   
+
         var chartPie = new google.visualization.PieChart(document.getElementById('piechart'));
         chartPie.draw(dataPie, optionsPie);
 
         // --- Gráfico de Colunas ---
         var dataBar = google.visualization.arrayToDataTable([
             ['Ano', 'Filmes lançados'],
-            @foreach($filmeProcurados->take(5) as $filme)
-            ['{{$filme->titulo}}', {{$filme->totalFilmes}}],
+            @foreach($filmeProcurados -> take(5) as $filme)['{{$filme->titulo}}', {{$filme -> totalFilmes}}],
             @endforeach
         ]);
 
@@ -92,7 +90,7 @@
             titleTextStyle: {
                 fontSize: 20,
                 bold: true,
-                color: '#fff'
+                color: 'black'
             },
             legend: {
                 position: 'none'
@@ -101,12 +99,12 @@
             backgroundColor: 'transparent',
             hAxis: {
                 textStyle: {
-                    color: '#ddd'
+                    color: 'black'
                 }
             },
             vAxis: {
                 textStyle: {
-                    color: '#ddd'
+                    color: 'black'
                 }
             },
             chartArea: {

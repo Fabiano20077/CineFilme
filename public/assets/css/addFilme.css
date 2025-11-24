@@ -172,3 +172,7 @@ label {
     width: 100%;             /* ocupa toda a largura da caixa */
     margin-top: 20px;        /* opcional, para dar espaço acima */
 }
+
+.imgIcon {
+    height: 27vh;
+}
